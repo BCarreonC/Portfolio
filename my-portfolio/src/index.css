@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-/* Definición de tema personalizado */
 @theme {
   --color-primary: #64FFDA;
   --color-background-light: #F3F4F6;
@@ -11,7 +10,17 @@
   --color-text-dark-secondary: #9CA3AF;
 }
 
-/* Tus estilos personalizados opcionales */
 .writing-mode-vertical {
   writing-mode: vertical-rl;
 }
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.animate-caret {
+  animation: caret 2s steps(2) infinite;
+}
+

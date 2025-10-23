@@ -1,11 +1,20 @@
-import './App.css';
+import './index.css';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import SocialSidebar from './components/SocialSidebar';
+import EmailSidebar from './components/EmailSidebar';
+import Experience from './components/Experience';
+import Projects from './components/Projects';
 
 function App() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background-dark text-primary">
-      <h1 className="text-3xl font-bold underline">
-        ¡Hello Tailwind 4 con tema personalizado!
-      </h1>
+    <div className="bg-background-dark font-display text-text-dark-primary min-h-screen flex flex-col">
+      <Header />
+      <Hero />
+      <SocialSidebar />
+      <EmailSidebar />
+      <Experience />
+      <Projects />
     </div>
   );
 }
