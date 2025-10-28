@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 export default function Hero() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const frases = [
+    "Ingeniero de Software y Desarrollador Fullstack.",
     "Construyo experiencias digitales con propósito.",
     "Desarrollo software funcional y centrado en las personas.",
     "Diseño interfaces modernas con React y Tailwind.",
@@ -106,7 +107,7 @@ export default function Hero() {
           <div className="mt-6 sm:mt-8 md:mt-12">
             <a
               className="inline-block text-primary border border-primary rounded px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 text-sm sm:text-base md:text-lg hover:bg-primary/10 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
-              href="#work"
+              href="#projects"
             >
               Ver mis proyectos
             </a>

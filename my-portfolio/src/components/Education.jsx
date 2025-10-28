@@ -1,0 +1,75 @@
+import { useEffect, useState } from "react";
+import Background from "./ui/Background"; // ajusta la ruta si es necesario
+
+const educacion = [
+  {
+    institucion: "Universidad Autónoma de Querétaro (UAQ)",
+    grado: "Ingeniería en Software",
+    periodo: "2019 - 2025",
+    descripcion:
+      "Formación integral en desarrollo de software, bases de datos, metodologías ágiles y proyectos reales de ingeniería.",
+  },
+  {
+    institucion: "Platzi",
+    grado: "Curso de React y Tailwind CSS",
+    periodo: "2023",
+    descripcion:
+      "Aprendizaje práctico de desarrollo web moderno con React, Tailwind y buenas prácticas en UI/UX.",
+  },
+  {
+    institucion: "Udemy",
+    grado: "Curso de Python y Flask",
+    periodo: "2022",
+    descripcion:
+      "Desarrollo de aplicaciones backend con Flask, integración de bases de datos y despliegue en servidores locales.",
+  },
+];
+
+export default function Education() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setVisible(true), 500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <section
+      id="education"
+      className={`relative grid grid-cols-1 md:grid-cols-2 gap-8 items-start justify-center w-full min-h-screen px-16 md:px-32 lg:px-64 py-16 md:py-24 lg:py-32 transition-all duration-1000 ${
+        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      }`}
+    >
+      <Background variant="education" />
+
+      <div className="relative z-10 col-span-full max-w-5xl w-full text-center md:text-left">
+        <h2 className="text-3xl sm:text-5xl font-bold text-primary mb-10">
+          Educación
+        </h2>
+      </div>
+
+      {educacion.map((edu, i) => (
+        <div
+          key={i}
+          className="relative z-10 bg-gray-950 bg-opacity-70 backdrop-blur-md p-6 rounded-xl shadow-lg hover:shadow-primary/30 transition-all duration-500 transform hover:-translate-y-1"
+        >
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-3">
+            <h3 className="text-2xl sm:text-3xl font-bold text-white">
+              {edu.grado}
+            </h3>
+            <p className="text-gray-400 text-sm sm:text-base mt-1 sm:mt-0">
+              {edu.periodo}
+            </p>
+          </div>
+
+          <p className="text-primary text-lg sm:text-xl font-semibold mb-2">
+            {edu.institucion}
+          </p>
+          <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+            {edu.descripcion}
+          </p>
+        </div>
+      ))}
+    </section>
+  );
+}

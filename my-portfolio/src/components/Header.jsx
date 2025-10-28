@@ -4,11 +4,21 @@ import { Menu, X, FileText } from "lucide-react";
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // 🔗 Ruta al archivo PDF de tu CV (debes colocarlo en la carpeta public/)
+  const cvUrl = "/cv/BenjamínCarreón.pdf";
+
   const links = [
     { id: "00", label: "Sobre mí", href: "#about" },
     { id: "01", label: "Experiencia", href: "#experience" },
     { id: "02", label: "Proyectos", href: "#projects" },
+    { id: "03", label: "Educación", href: "#education" },
   ];
+
+  // 🔍 Lógica para abrir el CV en nueva pestaña
+  const handleOpenCV = (e) => {
+    e.preventDefault();
+    window.open(cvUrl, "_blank");
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background-dark/50 backdrop-blur-sm shadow-sm">
@@ -52,12 +62,14 @@ export default function Header() {
               </a>
             ))}
           </div>
-          <a
+
+          {/* Botón para abrir el CV */}
+          <button
+            onClick={handleOpenCV}
             className="text-primary border border-primary rounded px-4 py-2 hover:bg-primary/10 transition-colors"
-            href="#"
           >
             Currículum
-          </a>
+          </button>
         </nav>
 
         {/* Botón menú móvil */}
@@ -69,23 +81,22 @@ export default function Header() {
             <Menu size={22} />
           </button>
 
-          <a
-            href="#"
+          {/* Botón CV móvil */}
+          <button
+            onClick={handleOpenCV}
             className="flex items-center justify-center gap-2 w-20 h-12 text-primary border border-primary rounded hover:bg-primary/10 transition-colors"
-            onClick={() => setMenuOpen(false)}
           >
             <FileText size={22} />
             CV
-          </a>
+          </button>
         </div>
       </div>
 
-      {/* Menú móvil desplegable con fade + slide */}
+      {/* Menú móvil desplegable */}
       <div
         className={`fixed top-0 right-0 w-64 h-screen bg-background-dark/95 backdrop-blur-md z-50 transform transition-all duration-500 flex flex-col pt-20 px-6 space-y-6 shadow-2xl
         ${menuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}`}
       >
-        {/* Botón de cerrar */}
         <div className="flex justify-end mb-4">
           <button
             onClick={() => setMenuOpen(false)}
@@ -95,7 +106,6 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Enlaces */}
         <nav className="flex flex-col space-y-6 text-lg">
           {links.map((link) => (
             <a
@@ -108,6 +118,14 @@ export default function Header() {
               {link.label}
             </a>
           ))}
+
+          {/* CV en el menú móvil */}
+          <button
+            onClick={handleOpenCV}
+            className="flex items-center gap-2 text-primary border border-primary rounded px-3 py-2 hover:bg-primary/10 transition-colors"
+          >
+            <FileText size={22} /> Ver CV
+          </button>
         </nav>
       </div>
     </header>
