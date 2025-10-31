@@ -124,7 +124,7 @@ export default function Header() {
             onClick={handleOpenCV}
             className="flex items-center gap-2 text-primary border border-primary rounded px-3 py-2 hover:bg-primary/10 transition-colors"
           >
-            <FileText size={22} /> Ver CV
+            <FileText size={22} /> Ver Curriculum
           </button>
         </nav>
       </div>

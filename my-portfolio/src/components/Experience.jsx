@@ -66,20 +66,20 @@ export default function Experience() {
               key={i}
               className="relative z-10 bg-gray-950 bg-opacity-70 backdrop-blur-md p-5 sm:p-6 md:p-8 rounded-xl shadow-lg hover:shadow-primary/30 transition-all duration-500 transform hover:-translate-y-1"
             >
-              {/* Encabezado de rol y periodo */}
-              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-3">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
-                  {exp.rol}
-                </h3>
-                <p className="text-gray-400 text-sm sm:text-base mt-1 sm:mt-0">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
+                {exp.rol}
+              </h3>
+              {/* Empresa y periodo */}
+              <div className="flex flex-row justify-between sm:space-between sm:items-center mb-1 my-2">
+                <p className="flex items-center text-primary text-base sm:text-lg md:text-xl font-semibold mb-2">
+                  {exp.empresa}
+                </p>
+                <p className="flex items-center text-gray-400 text-sm sm:text-base mb-2">
                   {exp.periodo}
                 </p>
               </div>
 
               {/* Empresa */}
-              <p className="text-primary text-base sm:text-lg md:text-xl font-semibold mb-2">
-                {exp.empresa}
-              </p>
 
               {/* Descripción */}
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed">

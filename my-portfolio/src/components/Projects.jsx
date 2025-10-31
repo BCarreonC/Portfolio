@@ -98,7 +98,7 @@ export default function Projects() {
         </div>
       </div>
 
-      {/* Carrusel de tecnologías sin espacios debajo de los proyectos */}
+      {/* Carrusel de tecnologías*/}
       <div className="w-full mt-10 mb-0 pt-0">
         <TechCarousel />
       </div>
