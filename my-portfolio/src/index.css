@@ -51,28 +51,24 @@
   content: "";
   position: absolute;
   top: 0;
-  width: 6rem; /* Ajusta el tamaño del blur */
+  width: 1rem; /* Ajusta el tamaño del blur */
   height: 100%;
   z-index: 20;
   pointer-events: none;
+ 
+  backdrop-filter: blur(2px);
 }
 
+/* 🔹 Lado izquierdo */
 .marquee-container::before {
   left: 0;
-  background: linear-gradient(
-    to right,
-    rgba(10, 25, 47, 1),
-    rgba(10, 25, 47, 0)
-  );
+  background: transparent;
 }
 
+/* 🔹 Lado derecho */
 .marquee-container::after {
   right: 0;
-  background: linear-gradient(
-    to left,
-    rgba(10, 25, 47, 1),
-    rgba(10, 25, 47, 0)
-  );
+  background: transparent
 }
 
 /* Cinta de elementos dentro del marquee */

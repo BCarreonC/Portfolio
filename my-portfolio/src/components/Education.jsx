@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Background from "./ui/Background"; // ajusta la ruta si es necesario
+import Background from "./ui/Background";
 
 const educacion = [
   {
@@ -36,14 +36,14 @@ export default function Education() {
   return (
     <section
       id="education"
-      className={`relative grid grid-cols-1 md:grid-cols-2 gap-8 items-start justify-center w-full min-h-screen px-16 md:px-32 lg:px-64 py-16 md:py-24 lg:py-32 transition-all duration-1000 ${
+      className={`relative grid grid-cols-1 gap-8 items-start justify-center w-full min-h-screen px-4 sm:px-8 md:px-12 lg:px-40 py-16 md:py-24 lg:py-32 transition-all duration-1000 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
       <Background variant="education" />
 
       <div className="relative z-10 col-span-full max-w-5xl w-full text-center md:text-left">
-        <h2 className="text-3xl sm:text-5xl font-bold text-primary mb-10">
+        <h2 className="text-3xl sm:text-5xl font-bold text-primary mb-0">
           Educación
         </h2>
       </div>
