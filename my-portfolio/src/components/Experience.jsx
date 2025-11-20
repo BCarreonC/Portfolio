@@ -79,8 +79,6 @@ export default function Experience() {
                 </p>
               </div>
 
-              {/* Empresa */}
-
               {/* Descripción */}
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
                 {exp.descripcion}

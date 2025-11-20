@@ -36,7 +36,7 @@ export default function Education() {
   return (
     <section
       id="education"
-      className={`relative grid grid-cols-1 gap-8 items-start justify-center w-full min-h-screen px-4 sm:px-8 md:px-12 lg:px-40 py-16 md:py-24 lg:py-48 transition-all duration-1000 ${
+      className={`relative w-full min-h-screen flex flex-col items-center justify-center px-4 sm:px-8 md:px-12 lg:px-40 py-16 sm:py-20 md:py-28 transition-all duration-1000 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
