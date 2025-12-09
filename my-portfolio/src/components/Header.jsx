@@ -109,7 +109,7 @@ export default function Header() {
 
       {/* Menú móvil desplegable */}
       <div
-        className={`fixed top-0 right-0 w-64 h-screen bg-background-dark/95 backdrop-blur-md z-50 transform transition-all duration-500 flex flex-col pt-20 px-6 space-y-6 shadow-2xl
+        className={`fixed top-0 right-0 w-2/3 h-screen bg-background-dark/95 backdrop-blur-md z-50 transform transition-all duration-500 flex flex-col pt-14 px-6 space-y-6 shadow-2xl
         ${
           menuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
         }`}

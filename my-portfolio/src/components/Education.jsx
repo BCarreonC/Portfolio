@@ -43,7 +43,7 @@ export default function Education() {
       <Background variant="education" />
 
       <div className="relative z-10 col-span-full max-w-5xl w-full text-center md:text-left">
-        <h2 className="text-3xl sm:text-5xl font-bold text-primary mb-0">
+        <h2 className="text-3xl sm:text-5xl font-bold text-primary mb-12">
           Educación
         </h2>
       </div>
@@ -51,9 +51,9 @@ export default function Education() {
       {educacion.map((edu, i) => (
         <div
           key={i}
-          className="relative z-10 bg-gray-950 bg-opacity-70 backdrop-blur-md p-6 rounded-xl shadow-lg hover:shadow-primary/30 transition-all duration-500 transform hover:-translate-y-1"
+          className="relative z-10 bg-gray-950 bg-opacity-70 backdrop-blur-md p-6 rounded-xl shadow-lg hover:shadow-primary/30 transition-all duration-500 transform hover:-translate-y-1 mb-8 w-full max-w-5xl"
         >
-          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-3">
+          <div className="flex sm:flex-row sm:justify-between sm:items-center mb-3">
             <h3 className="text-2xl sm:text-3xl font-bold text-white">
               {edu.grado}
             </h3>
