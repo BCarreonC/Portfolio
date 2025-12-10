@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Background from "./ui/Background";
+import TechCarousel from "./Skills";
 
 const proyectos = [
   {
@@ -52,34 +53,37 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className={`relative flex flex-col items-start justify-center min-h-screen px-6 md:px-12 lg:px-24 py-16 transition-all duration-1000 ${
+      className={`relative flex flex-col items-center justify-center min-h-screen px-4 sm:px-8 md:px-12 lg:px-40 py-12 sm:py-16 transition-all duration-1000 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
       <Background variant="projects" />
 
-      <div className="relative z-10 max-w-5xl w-full text-left">
-        <h2 className="text-3xl sm:text-5xl font-bold text-primary mb-10 text-center md:text-left">
+      <div className="relative z-10 text-center md:text-left">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-12 text-left">
           Proyectos
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Grilla adaptable de proyectos */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-16">
           {proyectos.map((proj, i) => (
             <div
               key={i}
               onClick={() => setSelectedProject(proj)}
-              className={`cursor-pointer relative bg-gray-950 bg-opacity-70 backdrop-blur-md p-6 rounded-xl shadow-lg transform transition-all duration-700 hover:scale-105 hover:shadow-2xl ${
+              className={`cursor-pointer relative bg-gray-950 bg-opacity-70 backdrop-blur-md p-5 sm:p-6 rounded-xl shadow-lg transform transition-all duration-700 hover:scale-105 hover:shadow-2xl ${
                 visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
               }`}
             >
-              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">
                 {proj.nombre}
               </h3>
-              <p className="text-gray-400 text-sm sm:text-base mb-2">{proj.tipo}</p>
-              <p className="text-gray-300 text-sm sm:text-base mb-4">
+              <p className="text-gray-400 text-sm sm:text-base mb-2">
+                {proj.tipo}
+              </p>
+              <p className="text-gray-300 text-xs sm:text-sm md:text-base mb-4">
                 {proj.descripcion}
               </p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                 {proj.tecnologias.map((tech, j) => (
                   <span
                     key={j}
@@ -94,26 +98,39 @@ export default function Projects() {
         </div>
       </div>
 
-      {/* Modal */}
+      {/* Carrusel de tecnologías*/}
+      <div className="w-full mt-10 mb-0 pt-0">
+        <TechCarousel />
+      </div>
+
+      {/* Modal de detalle de proyecto */}
       {selectedProject && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm px-4 sm:px-6"
           onClick={() => setSelectedProject(null)}
         >
           <div
-            className="bg-gray-900 p-6 rounded-xl max-w-3xl w-full relative"
-            onClick={(e) => e.stopPropagation()} // evita cerrar al hacer click dentro
+            className="bg-gray-900 p-4 sm:p-6 rounded-xl w-full max-w-md sm:max-w-2xl md:max-w-3xl relative overflow-y-auto max-h-[90vh]"
+            onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setSelectedProject(null)}
-              className="absolute top-4 right-4 text-white text-xl font-bold"
+              className="absolute top-3 right-3 text-white text-2xl font-bold hover:text-primary transition"
             >
               &times;
             </button>
-            <h3 className="text-3xl font-bold text-white mb-2">{selectedProject.nombre}</h3>
-            <p className="text-gray-400 mb-2">{selectedProject.tipo}</p>
-            <p className="text-gray-300 mb-4">{selectedProject.descripcion}</p>
-            <div className="flex flex-wrap gap-2 mb-4">
+
+            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+              {selectedProject.nombre}
+            </h3>
+            <p className="text-gray-400 text-sm sm:text-base mb-2">
+              {selectedProject.tipo}
+            </p>
+            <p className="text-gray-300 text-sm sm:text-base mb-4">
+              {selectedProject.descripcion}
+            </p>
+
+            <div className="flex flex-wrap gap-2 mb-4 justify-center sm:justify-start">
               {selectedProject.tecnologias.map((tech, i) => (
                 <span
                   key={i}
@@ -123,20 +140,23 @@ export default function Projects() {
                 </span>
               ))}
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+
+            {/* Galería adaptable */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-6">
               {selectedProject.imagenes.map((img, i) => (
                 <img
                   key={i}
                   src={img}
                   alt={`${selectedProject.nombre} ${i + 1}`}
-                  className="rounded-lg object-cover w-full h-40 sm:h-48"
+                  className="rounded-lg object-cover w-full h-40 sm:h-48 md:h-56"
                 />
               ))}
             </div>
+
             <a
               href={selectedProject.link}
               target="_blank"
-              className="inline-block bg-primary text-black font-bold px-6 py-2 rounded hover:bg-primary/80 transition"
+              className="inline-block bg-primary text-black font-bold text-sm sm:text-base px-5 py-2 rounded hover:bg-primary/80 transition"
             >
               Ver Proyecto
             </a>

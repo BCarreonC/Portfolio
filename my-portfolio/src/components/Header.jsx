@@ -1,17 +1,23 @@
 import { useState } from "react";
 import { Menu, X, FileText } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import "../i18n";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { t, i18n } = useTranslation();
 
   // 🔗 Ruta al archivo PDF de tu CV (debes colocarlo en la carpeta public/)
-  const cvUrl = "/cv/BenjamínCarreón.pdf";
+   const cvUrl =
+    i18n.language === "es"
+      ? "/cv/BenjamínCarreón.pdf"
+      : "/cv/BenjaminCarreon2.pdf";
 
   const links = [
-    { id: "00", label: "Sobre mí", href: "#about" },
-    { id: "01", label: "Experiencia", href: "#experience" },
-    { id: "02", label: "Proyectos", href: "#projects" },
-    { id: "03", label: "Educación", href: "#education" },
+    { id: "00", label: t("header.about"), href: "#about" },
+    { id: "01", label: t("header.experience"), href: "#experience" },
+    { id: "02", label: t("header.projects"), href: "#projects" },
+    { id: "03", label: t("header.education"), href: "#education" },
   ];
 
   // 🔍 Lógica para abrir el CV en nueva pestaña
@@ -62,11 +68,20 @@ export default function Header() {
               </a>
             ))}
           </div>
+          {/* Botón para cambiar idioma */}
+          <button
+            className="text-primary cursor-pointer border border-primary rounded px-4 py-2 hover:bg-primary/10 transition-colors"
+            onClick={() =>
+              i18n.changeLanguage(i18n.language === "es" ? "en" : "es")
+            }
+          >
+            {i18n.language === "es" ? "EN" : "ES"}
+          </button>
 
           {/* Botón para abrir el CV */}
           <button
             onClick={handleOpenCV}
-            className="text-primary border border-primary rounded px-4 py-2 hover:bg-primary/10 transition-colors"
+            className="text-primary cursor-pointer border border-primary rounded px-4 py-2 hover:bg-primary/10 transition-colors"
           >
             Currículum
           </button>
@@ -94,8 +109,10 @@ export default function Header() {
 
       {/* Menú móvil desplegable */}
       <div
-        className={`fixed top-0 right-0 w-64 h-screen bg-background-dark/95 backdrop-blur-md z-50 transform transition-all duration-500 flex flex-col pt-20 px-6 space-y-6 shadow-2xl
-        ${menuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}`}
+        className={`fixed top-0 right-0 w-2/3 h-screen bg-background-dark/95 backdrop-blur-md z-50 transform transition-all duration-500 flex flex-col pt-14 px-6 space-y-6 shadow-2xl
+        ${
+          menuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
+        }`}
       >
         <div className="flex justify-end mb-4">
           <button
@@ -124,7 +141,7 @@ export default function Header() {
             onClick={handleOpenCV}
             className="flex items-center gap-2 text-primary border border-primary rounded px-3 py-2 hover:bg-primary/10 transition-colors"
           >
-            <FileText size={22} /> Ver CV
+            <FileText size={22} /> Ver Curriculum
           </button>
         </nav>
       </div>

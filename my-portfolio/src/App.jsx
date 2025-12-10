@@ -5,7 +5,6 @@ import SocialSidebar from './components/SocialSidebar';
 import EmailSidebar from './components/EmailSidebar';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
-import Skills from './components/Skills';
 import Education from './components/Education';
 
 function App() {
@@ -17,7 +16,6 @@ function App() {
       <EmailSidebar />
       <Experience />
       <Projects />
-      <Skills />
       <Education />
     </div>
   );

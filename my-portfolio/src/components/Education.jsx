@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Background from "./ui/Background"; // ajusta la ruta si es necesario
+import Background from "./ui/Background";
 
 const educacion = [
   {
@@ -36,14 +36,14 @@ export default function Education() {
   return (
     <section
       id="education"
-      className={`relative grid grid-cols-1 md:grid-cols-2 gap-8 items-start justify-center w-full min-h-screen px-16 md:px-32 lg:px-64 py-16 md:py-24 lg:py-32 transition-all duration-1000 ${
+      className={`relative w-full min-h-screen flex flex-col items-center justify-center px-4 sm:px-8 md:px-12 lg:px-40 py-16 sm:py-20 md:py-28 transition-all duration-1000 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
       <Background variant="education" />
 
       <div className="relative z-10 col-span-full max-w-5xl w-full text-center md:text-left">
-        <h2 className="text-3xl sm:text-5xl font-bold text-primary mb-10">
+        <h2 className="text-3xl sm:text-5xl font-bold text-primary mb-12">
           Educación
         </h2>
       </div>
@@ -51,9 +51,9 @@ export default function Education() {
       {educacion.map((edu, i) => (
         <div
           key={i}
-          className="relative z-10 bg-gray-950 bg-opacity-70 backdrop-blur-md p-6 rounded-xl shadow-lg hover:shadow-primary/30 transition-all duration-500 transform hover:-translate-y-1"
+          className="relative z-10 bg-gray-950 bg-opacity-70 backdrop-blur-md p-6 rounded-xl shadow-lg hover:shadow-primary/30 transition-all duration-500 transform hover:-translate-y-1 mb-8 w-full max-w-5xl"
         >
-          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-3">
+          <div className="flex sm:flex-row sm:justify-between sm:items-center mb-3">
             <h3 className="text-2xl sm:text-3xl font-bold text-white">
               {edu.grado}
             </h3>
