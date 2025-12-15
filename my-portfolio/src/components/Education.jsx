@@ -57,7 +57,7 @@ export default function Education() {
             <h3 className="text-2xl sm:text-3xl font-bold text-white">
               {edu.grado}
             </h3>
-            <p className="text-gray-400 text-sm sm:text-base mt-1 sm:mt-0">
+            <p className="flex no-wrap text-gray-400 text-sm sm:text-base mt-1 ml-4 sm:mt-0 whitespace-nowrap">
               {edu.periodo}
             </p>
           </div>

@@ -76,3 +76,35 @@
   display: flex;
   gap: 3rem; /* espacio entre elementos */
 }
+
+
+
+/* 🔹  Glow pulsante (resaltado elegante) */
+@keyframes logo-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 2px var(--color-primary));
+  }
+  50% {
+    filter: drop-shadow(0 0 14px var(--color-primary));
+  }
+}
+
+/* 🔹  Fade-in de entrada */
+@keyframes logo-fade {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 🔥 Combinación de las tres animaciones en una sola clase */
+.logo-animation {
+  animation: 
+    logo-fade 0.7s ease-out,
+    logo-rotate 16s linear infinite,
+    logo-glow 4s ease-in-out infinite;
+}
