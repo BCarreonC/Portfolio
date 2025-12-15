@@ -59,10 +59,13 @@ export default function Projects() {
     >
       <Background variant="projects" />
 
-      <div className="relative z-10 text-center md:text-left">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-12 text-left">
+      <div className="relative z-10 col-span-full max-w-5xl w-full text-center md:text-left">
+        <h2 className="text-3xl sm:text-5xl font-bold text-primary mb-12">
           Proyectos
         </h2>
+      </div>
+
+      <div className="relative z-10">
 
         {/* Grilla adaptable de proyectos */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-16">

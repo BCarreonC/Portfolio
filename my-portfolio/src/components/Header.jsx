@@ -8,7 +8,7 @@ export default function Header() {
   const { t, i18n } = useTranslation();
 
   // 🔗 Ruta al archivo PDF de tu CV (debes colocarlo en la carpeta public/)
-   const cvUrl =
+  const cvUrl =
     i18n.language === "es"
       ? "/cv/BenjamínCarreón.pdf"
       : "/cv/BenjaminCarreon2.pdf";
@@ -30,12 +30,15 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background-dark/50 backdrop-blur-sm shadow-sm">
       <div className="container mx-auto px-6 md:px-4 py-4 flex justify-between items-center">
         {/* Logo */}
-        <a href="#" className="inline-flex items-center justify-center">
+        <a
+          href="#"
+          className="inline-flex items-center justify-center hover:scale-105 transition-transform duration-300"
+        >
           <svg
             width="64"
             height="64"
             viewBox="0 0 100 100"
-            className="stroke-primary text-primary fill-transparent"
+            className="stroke-primary text-primary fill-transparent logo-animation"
           >
             <polygon
               points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5"
@@ -109,7 +112,7 @@ export default function Header() {
 
       {/* Menú móvil desplegable */}
       <div
-        className={`fixed top-0 right-0 w-2/3 h-screen bg-background-dark/95 backdrop-blur-md z-50 transform transition-all duration-500 flex flex-col pt-14 px-6 space-y-6 shadow-2xl
+        className={`fixed top-0 right-0 w-2/4 h-screen bg-background-dark/95 backdrop-blur-md z-50 transform transition-all duration-500 flex flex-col pt-14 px-6 space-y-6 shadow-2xl
         ${
           menuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
         }`}
@@ -128,21 +131,13 @@ export default function Header() {
             <a
               key={link.id}
               href={link.href}
-              className="text-text-dark-secondary hover:text-primary hover:bg-primary/20 rounded px-3 py-2 transition-colors"
+              className="text-text-dark-secondary hover:text-primary hover:bg-primary/20 rounded px-4 py-2 transition-colors"
               onClick={() => setMenuOpen(false)}
             >
               <span className="text-primary mr-2">{link.id}.</span>
               {link.label}
             </a>
           ))}
-
-          {/* CV en el menú móvil */}
-          <button
-            onClick={handleOpenCV}
-            className="flex items-center gap-2 text-primary border border-primary rounded px-3 py-2 hover:bg-primary/10 transition-colors"
-          >
-            <FileText size={22} /> Ver Curriculum
-          </button>
         </nav>
       </div>
     </header>
