@@ -11,12 +11,12 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.15",
-    "i18next": "^25.6.0",
+    "i18next": "^25.7.3",
     "lucide-react": "^0.546.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-fast-marquee": "^1.6.5",
-    "react-i18next": "^16.2.3",
+    "react-i18next": "^16.5.0",
     "react-icons": "^5.5.0",
     "react-typing-effect": "^2.0.5",
     "tailwindcss": "^4.1.15"
@@ -26,6 +26,7 @@
     "@types/react": "^19.1.16",
     "@types/react-dom": "^19.1.9",
     "@vitejs/plugin-react": "^5.0.4",
+    "baseline-browser-mapping": "^2.9.8",
     "eslint": "^9.36.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.22",
