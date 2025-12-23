@@ -7,13 +7,18 @@ import {
   FaPython,
   FaDocker,
   FaGitAlt,
+  FaJsSquare,
 } from "react-icons/fa";
 import {
   SiTailwindcss,
   SiTypescript,
-  SiPostgresql,
   SiMongodb,
   SiFlask,
+  SiElectron,
+  SiSupabase,
+  SiNestjs,
+  SiPostman,
+  SiTensorflow,
 } from "react-icons/si";
 
 /* --- Subcomponente reutilizable para el blur de los bordes --- */
@@ -44,16 +49,28 @@ function MarqueeEdgeBlur({
 
 const techStack = [
   { name: "React", icon: <FaReact className="text-cyan-400 text-5xl" /> },
-  { name: "Tailwind CSS", icon: <SiTailwindcss className="text-sky-400 text-5xl" /> },
   { name: "TypeScript", icon: <SiTypescript className="text-blue-500 text-5xl" /> },
-  { name: "Python", icon: <FaPython className="text-yellow-400 text-5xl" /> },
-  { name: "Flask", icon: <SiFlask className="text-gray-300 text-5xl" /> },
+  { name: "JavaScript", icon: <FaJsSquare className="text-yellow-400 text-5xl" /> },
+
+  { name: "NestJS", icon: <SiNestjs className="text-red-500 text-5xl" /> },
   { name: "Node.js", icon: <FaNodeJs className="text-green-500 text-5xl" /> },
-  { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-400 text-5xl" /> },
+  { name: "Flask", icon: <SiFlask className="text-gray-300 text-5xl" /> },
+
   { name: "MongoDB", icon: <SiMongodb className="text-green-400 text-5xl" /> },
+  { name: "Supabase", icon: <SiSupabase className="text-emerald-400 text-5xl" /> },
+
+  { name: "Electron", icon: <SiElectron className="text-blue-300 text-5xl" /> },
   { name: "Docker", icon: <FaDocker className="text-blue-400 text-5xl" /> },
-  { name: "Git", icon: <FaGitAlt className="text-orange-400 text-5xl" /> },
+
+  { name: "Tailwind CSS", icon: <SiTailwindcss className="text-sky-400 text-5xl" /> },
+
+  { name: "Postman", icon: <SiPostman className="text-orange-400 text-5xl" /> },
+  { name: "Git", icon: <FaGitAlt className="text-orange-500 text-5xl" /> },
+
+  { name: "Python", icon: <FaPython className="text-yellow-400 text-5xl" /> },
+  { name: "TensorFlow", icon: <SiTensorflow className="text-orange-500 text-5xl" /> },
 ];
+
 
 export default function Skills() {
   const [visible, setVisible] = useState(false);

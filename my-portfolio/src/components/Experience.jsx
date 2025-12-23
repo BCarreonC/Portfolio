@@ -3,38 +3,23 @@ import Background from "./ui/Background";
 
 const experiencias = [
   {
-    empresa: "TechSolutions MX",
-    rol: "Desarrollador Frontend",
-    periodo: "2024 - Actualidad",
+    empresa: "Consultora de Tecnología (Startup)",
+    rol: "Desarrollador Full-Stack Jr.",
+    periodo: "Ago 2025 – Oct 2025",
     descripcion:
-      "Diseño y desarrollo de interfaces interactivas con React y Tailwind CSS para un sistema ERP. Implementación de autenticación con Supabase y despliegue en entornos Electron.",
-    tecnologias: ["React", "Vite", "Electron", "Supabase", "Tailwind CSS"],
-  },
-  {
-    empresa: "SoftFactory",
-    rol: "Ingeniero de Software",
-    periodo: "2023 - 2024",
-    descripcion:
-      "Participé en el desarrollo de una aplicación de monitoreo IoT para optimizar el consumo energético. Integración de dashboards con análisis de datos en tiempo real.",
-    tecnologias: ["Node.js", "Express", "MongoDB", "Chart.js", "IoT APIs"],
-  },
-  {
-    empresa: "InnovaWeb",
-    rol: "Desarrollador Fullstack Jr.",
-    periodo: "2022 - 2023",
-    descripcion:
-      "Desarrollo de aplicaciones web empresariales con enfoque en rendimiento y usabilidad. Colaboración con equipos de diseño y QA bajo metodología ágil (Scrum).",
-    tecnologias: ["Flask", "React", "PostgreSQL", "Docker", "GitHub Actions"],
-  },
-  {
-    empresa: "UAQ - Proyecto Universitario",
-    rol: "Desarrollador de Sistemas",
-    periodo: "2021 - 2022",
-    descripcion:
-      "Diseño de un sistema de gestión académica modular con control de usuarios, autenticación OTP y generación automática de reportes PDF.",
-    tecnologias: ["Python", "Flask", "SQLite", "Bootstrap", "ReportLab"],
+      "Participé en el diseño e implementación de un sistema ERP interno para la gestión de clientes, empleados, contenidos y procesos de reclutamiento. Implementé autenticación con JWT, control de accesos por roles y participé como desarrollador principal en decisiones de UX/UI, trabajando bajo metodologías ágiles con retroalimentación diaria del equipo de ingeniería.",
+    tecnologias: [
+      "TypeScript",
+      "NestJS",
+      "Tailwind",
+      "MongoDB",
+      "Docker",
+      "Postman",
+      "JWT",
+    ],
   },
 ];
+
 
 export default function Experience() {
   const [visible, setVisible] = useState(false);

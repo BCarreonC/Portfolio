@@ -4,51 +4,96 @@ import TechCarousel from "./Skills";
 
 const proyectos = [
   {
-    nombre: "Gestor de Tareas Pro",
+    nombre: "ERP Empresarial Interno",
     descripcion:
-      "Aplicación web para organizar tareas y proyectos en equipo, con autenticación de usuarios y notificaciones en tiempo real.",
-    tecnologias: ["React", "Tailwind CSS", "Firebase", "Vite"],
+      "Sistema ERP interno desarrollado durante prácticas profesionales en una consultora de tecnología. Gestiona clientes, empleados, contenidos, blog y reclutamiento con control de accesos por roles.",
+    tecnologias: [
+      "TypeScript",
+      "NestJS",
+      "Tailwind",
+      "MongoDB",
+      "Docker",
+      "MinIO",
+      "Vault",
+      "Postman",
+    ],
     link: "#",
-    tipo: "Web App",
-    imagenes: ["/images/gestor1.png", "/images/gestor2.png"],
+    tipo: "ERP / Full Stack",
+    imagenes: ["/images/erp-startup-1.png", "/images/erp-startup-2.png"],
   },
   {
-    nombre: "ShopX eCommerce",
+    nombre: "ERP para Empresa de Seguridad Privada",
     descripcion:
-      "Plataforma de comercio electrónico con carrito de compras, pagos en línea y dashboard administrativo.",
-    tecnologias: ["Next.js", "Stripe API", "MongoDB", "Vercel"],
+      "Sistema ERP para la gestión de inventarios, proyectos y reportes automáticos. Incluyó levantamiento de requerimientos y entregas incrementales bajo metodología Scrum.",
+    tecnologias: [
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "Electron",
+      "Supabase",
+    ],
     link: "#",
-    tipo: "Web App",
-    imagenes: ["/images/shopx1.png", "/images/shopx2.png"],
+    tipo: "Desktop App / ERP",
+    imagenes: ["/images/erp-seguridad-1.png", "/images/erp-seguridad-2.png"],
   },
   {
-    nombre: "ChatBot AI",
+    nombre: "Chatbot Inteligente de Medicamentos",
     descripcion:
-      "Bot conversacional integrado a un CRM para atención al cliente con procesamiento de lenguaje natural.",
-    tecnologias: ["Node.js", "Express", "Dialogflow", "Socket.io"],
+      "Chatbot con inteligencia artificial para consulta de medicamentos del sector salud. Utiliza NLP para interpretar preguntas y responder con información médica estructurada.",
+    tecnologias: [
+      "Python",
+      "TensorFlow",
+      "NLP",
+      "Base de datos IMSS",
+    ],
     link: "#",
-    tipo: "Backend / AI",
-    imagenes: ["/images/chatbot1.png", "/images/chatbot2.png"],
+    tipo: "IA / NLP",
+    imagenes: ["/images/chatbot-1.png", "/images/chatbot-2.png"],
   },
   {
-    nombre: "Portfolio Personal",
+    nombre: "Portafolio Profesional",
     descripcion:
-      "Sitio web personal para mostrar proyectos, experiencia y contacto, con animaciones y diseño responsivo.",
-    tecnologias: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
-    link: "#",
+      "Portafolio web personal para presentar experiencia, proyectos y stack tecnológico, con diseño responsivo y animaciones modernas.",
+    tecnologias: [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Framer Motion",
+    ],
+    link: "https://benjamincarreon.vercel.app",
     tipo: "Web App",
-    imagenes: ["/images/portfolio1.png", "/images/portfolio2.png"],
+    imagenes: ["/images/portfolio-1.png", "/images/portfolio-2.png"],
   },
 ];
+
+
 
 export default function Projects() {
   const [visible, setVisible] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+  const [loadedImages, setLoadedImages] = useState({});
+
+  const handleImageLoad = (index) => {
+  requestAnimationFrame(() => {
+    setLoadedImages((prev) => ({
+      ...prev,
+      [index]: true,
+    }));
+  });
+};
+
 
   useEffect(() => {
     const timer = setTimeout(() => setVisible(true), 800);
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+  if (selectedProject) {
+    setLoadedImages({});
+  }
+}, [selectedProject]);
+
 
   return (
     <section
@@ -110,15 +155,23 @@ export default function Projects() {
       {selectedProject && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm px-4 sm:px-6"
-          onClick={() => setSelectedProject(null)}
+          onClick={() => {
+  setSelectedProject(null);
+  setLoadedImages({});
+}}
+
         >
           <div
             className="bg-gray-900 p-4 sm:p-6 rounded-xl w-full max-w-md sm:max-w-2xl md:max-w-3xl relative overflow-y-auto max-h-[90vh]"
             onClick={(e) => e.stopPropagation()}
           >
             <button
-              onClick={() => setSelectedProject(null)}
-              className="absolute top-3 right-3 text-white text-2xl font-bold hover:text-primary transition"
+              onClick={() => {
+  setSelectedProject(null);
+  setLoadedImages({});
+}}
+
+              className="absolute top-3 right-3 text-red-500 text-2xl font-bold hover:text-red-400 cursor-pointer"
             >
               &times;
             </button>
@@ -147,13 +200,24 @@ export default function Projects() {
             {/* Galería adaptable */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-6">
               {selectedProject.imagenes.map((img, i) => (
-                <img
-                  key={i}
-                  src={img}
-                  alt={`${selectedProject.nombre} ${i + 1}`}
-                  className="rounded-lg object-cover w-full h-40 sm:h-48 md:h-56"
-                />
-              ))}
+  <div
+    key={i}
+    className={`rounded-lg overflow-hidden transition-all duration-700 ease-out
+      ${
+        loadedImages[i]
+          ? "opacity-100 translate-y-0"
+          : "opacity-0 translate-y-4"
+      }`}
+  >
+    <img
+      src={img}
+      alt={`${selectedProject.nombre} ${i + 1}`}
+      onLoad={() => handleImageLoad(i)}
+      className="object-cover w-full h-40 sm:h-48 md:h-56"
+    />
+  </div>
+))}
+
             </div>
 
             <a

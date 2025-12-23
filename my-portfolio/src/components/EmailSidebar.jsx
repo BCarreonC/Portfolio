@@ -24,7 +24,7 @@ export default function EmailSidebar() {
         </a>
 
         {copied && (
-          <span className="absolute inline-block whitespace-nowrap -top-0 right-8 text-xs bg-primary text-black px-3 py-1 rounded-lg shadow-md animate-fade-in">
+          <span className="absolute inline-block whitespace-nowrap top-0 right-8 text-xs bg-primary text-black px-3 py-1 rounded-lg shadow-md animate-fade-in">
             Copiado
             <Check className="h-4 w-4 inline-block ml-2 text-black" />
           </span>
