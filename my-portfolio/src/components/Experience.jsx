@@ -1,28 +1,33 @@
 import { useEffect, useState } from "react";
 import Background from "./ui/Background";
-
-const experiencias = [
-  {
-    empresa: "Consultora de Tecnología (Startup)",
-    rol: "Desarrollador Full-Stack Jr.",
-    periodo: "Ago 2025 – Oct 2025",
-    descripcion:
-      "Participé en el diseño e implementación de un sistema ERP interno para la gestión de clientes, empleados, contenidos y procesos de reclutamiento. Implementé autenticación con JWT, control de accesos por roles y participé como desarrollador principal en decisiones de UX/UI, trabajando bajo metodologías ágiles con retroalimentación diaria del equipo de ingeniería.",
-    tecnologias: [
-      "TypeScript",
-      "NestJS",
-      "Tailwind",
-      "MongoDB",
-      "Docker",
-      "Postman",
-      "JWT",
-    ],
-  },
-];
-
+import { useTranslation } from "react-i18next";
+import "../i18n";
 
 export default function Experience() {
   const [visible, setVisible] = useState(false);
+  const { t } = useTranslation();
+
+  const experiencias = [
+    {
+      empresa: t("experience.0.company"),
+      rol: t("experience.0.role"),
+      periodo: t("experience.0.duration"),
+      descripcion: t("experience.0.description"),
+      tecnologias: [
+        "TypeScript",
+        "NestJS",
+        "Tailwind",
+        "MongoDB",
+        "Docker",
+        "Postman",
+        "MinIO",
+        "Vault",
+        "Git",
+        "JWT",
+
+      ],
+    },
+  ];
 
   useEffect(() => {
     const timer = setTimeout(() => setVisible(true), 500);
@@ -41,11 +46,11 @@ export default function Experience() {
 
       <div className="relative z-10 w-full mx-auto">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-12 text-center md:text-left">
-          Experiencia
+          {t("experience.title")}
         </h2>
 
         {/* Layout adaptable */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-16">
           {experiencias.map((exp, i) => (
             <div
               key={i}

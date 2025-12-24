@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
+import "../i18n";
+import { t } from "i18next";
 
 export default function Hero() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const frases = [
-    "Ingeniero de Software y Desarrollador Fullstack.",
-    "Construyo experiencias digitales con propósito.",
-    "Desarrollo software funcional y centrado en las personas.",
-    "Diseño interfaces modernas con React y Tailwind.",
-    "Creo herramientas que facilitan el trabajo y conectan ideas.",
-    "Transformo la complejidad en soluciones simples y elegantes.",
+    t("hero.phrases.phrase1"),
+    t("hero.phrases.phrase2"),
+    t("hero.phrases.phrase3"),
+    t("hero.phrases.phrase4"),
+    t("hero.phrases.phrase5"),
+    t("hero.phrases.phrase6"),
   ];
 
   const [index, setIndex] = useState(0);
@@ -86,11 +88,11 @@ export default function Hero() {
       >
         <div className="max-w-4xl text-left">
           <p className="lg:mt-8 text-primary text-base sm:text-lg mb-2 sm:mb-4">
-            Hola, mi nombre es
+            {t("hero.greeting")}
           </p>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold text-white leading-tight">
-            Benjamín Carreón
+            {t("hero.name")}
           </h1>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary mt-2 sm:mt-4 leading-snug">
@@ -100,8 +102,7 @@ export default function Hero() {
           </h2>
 
           <p className="mt-4 sm:mt-6 md:mt-8 max-w-2xl text-gray-300 text-sm sm:text-base lg:text-lg transition-opacity duration-700">
-            Soy un desarrollador de software especializado en construir experiencias digitales excepcionales. 
-            Actualmente estoy enfocado en crear productos accesibles y centrados en el ser humano.
+            {t("hero.description")}
           </p>
 
           <div className="mt-6 sm:mt-8 md:mt-12">
@@ -109,7 +110,7 @@ export default function Hero() {
               className="inline-block text-primary border border-primary rounded px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 text-sm sm:text-base md:text-lg hover:bg-primary/10 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
               href="#projects"
             >
-              Ver mis proyectos
+              {t("hero.cta_projects")}
             </a>
           </div>
         </div>

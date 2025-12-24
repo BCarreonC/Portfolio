@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { Check } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import "../i18n";
 
 export default function EmailSidebar() {
   const email = "benjamin.carreon@hotmail.com";
   const [copied, setCopied] = useState(false);
+  const { t } = useTranslation();
 
   const handleCopy = (e) => {
     e.preventDefault();
@@ -25,7 +28,7 @@ export default function EmailSidebar() {
 
         {copied && (
           <span className="absolute inline-block whitespace-nowrap top-0 right-8 text-xs bg-primary text-black px-3 py-1 rounded-lg shadow-md animate-fade-in">
-            Copiado
+            {t("email_sidebar.copied")}
             <Check className="h-4 w-4 inline-block ml-2 text-black" />
           </span>
         )}

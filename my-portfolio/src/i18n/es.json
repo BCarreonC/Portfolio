@@ -1,9 +1,91 @@
 {
-"header": {
+  "email_sidebar": {
+    "copied": "¡Correo copiado!"
+  },
+  "header": {
     "about": "Sobre mí",
     "experience": "Experiencia",
     "projects": "Proyectos",
     "education": "Educación",
     "cv": "Currículum"
+  },
+  "hero": {
+    "phrases": {
+      "phrase1": "Ingeniero de Software | Desarrollador Fullstack.",
+      "phrase2": "Construyo experiencias digitales con propósito.",
+      "phrase3": "Desarrollo software funcional y centrado en las personas",
+      "phrase4": "Diseño interfaces modernas con React y Tailwind.",
+      "phrase5": "Creo herramientas que facilitan el trabajo y conectan ideas.",
+      "phrase6": "Transformo la complejidad en soluciones simples y elegantes."
+    },
+    "greeting": "Hola, mi nombre es",
+    "name": "Benjamín Carreón",
+    "description": "Soy un desarrollador de software especializado en construir experiencias digitales excepcionales. Actualmente estoy enfocado en crear productos accesibles y centrados en el ser humano.",
+    "cta_projects": "Ver mis proyectos"
+  },
+  "experience": {
+    "title": "Experiencia",
+    "0": {
+      "company": "Consultora de Tecnología (Startup)",
+      "role": "Desarrollador Full-Stack Jr. (Prácticas Profesionales)",
+      "duration": "Agosto 2025 – Octubre 2025",
+      "description": "Participé en el diseño e implementación de un sistema ERP interno para la gestión de clientes, empleados, contenidos y procesos de reclutamiento. Implementé autenticación con JWT, control de accesos por roles y participé como desarrollador principal en decisiones de UX/UI, trabajando bajo metodologías ágiles con retroalimentación diaria del equipo de ingeniería."
+    }
+  },
+  "projects": {
+    "title": "Proyectos",
+    "button": "Ver proyecto",
+    "0": {
+      "name": "ERP Empresarial Interno",
+      "description": "Sistema ERP interno desarrollado durante prácticas profesionales en una consultora de tecnología. Gestiona clientes, empleados, contenidos, blog y reclutamiento con control de accesos por roles.",
+      "type": "ERP / Full Stack"
+    },
+    "1": {
+      "name": "ERP para Empresa de Seguridad Privada",
+      "description": "Sistema ERP para la gestión de inventarios, proyectos y reportes automáticos. Incluyó levantamiento de requerimientos y entregas incrementales bajo metodología Scrum.",
+      "type": "Desktop / ERP"
+    },
+    "2": {
+      "name": "Chatbot Inteligente de Medicamentos",
+      "description": "Chatbot con inteligencia artificial para consulta de medicamentos del sector salud. Utiliza NLP para interpretar preguntas y responder con información médica estructurada.",
+      "type": "IA / NLP"
+    },
+    "3": {
+      "name": "Portafolio Profesional",
+      "description": "Portafolio web personal para presentar experiencia, proyectos y stack tecnológico, con diseño responsivo y animaciones modernas.",
+      "type": "Web / Frontend"
+    }
+  },
+  "education": {
+    "title": "Educación",
+    "0": {
+      "institution": "Universidad Autónoma de Querétaro (UAQ)",
+      "degree": "Ingeniería en Software — Egresado",
+      "duration": "Julio 2021 – Diciembre 2025",
+      "description": "Formación profesional en ingeniería de software con enfoque en desarrollo full-stack, arquitectura de sistemas, bases de datos, calidad de software y metodologías ágiles. Participación en proyectos académicos y profesionales orientados a sistemas empresariales."
+    }
+  },
+  "certifications": {
+    "title": "Certificaciones",
+    "0": {
+      "name": "AWS Cloud Foundations",
+      "date": "2024",
+      "description": "Fundamentos de computación en la nube, servicios principales de AWS, arquitectura cloud, seguridad y buenas prácticas para entornos empresariales."
+    },
+    "1": {
+      "name": "Visualización de Datos con Python",
+      "date": "2024",
+      "description": "Análisis y visualización de datos utilizando Python para interpretación de información y apoyo a la toma de decisiones."
+    },
+    "2": {
+      "name": "Ingeniería de Datos con Python y PySpark",
+      "date": "En curso",
+      "description": "Procesamiento de datos a gran escala, pipelines de datos y fundamentos de ingeniería de datos utilizando PySpark."
+    },
+    "3": {
+      "name": "Prompt Engineering",
+      "date": "En curso",
+      "description": "Diseño y optimización de prompts para modelos de lenguaje, aplicado a soluciones de IA y automatización."
+    }
   }
 }

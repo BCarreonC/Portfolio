@@ -1,12 +1,19 @@
 import { useEffect, useState } from "react";
 import Background from "./ui/Background";
 import TechCarousel from "./Skills";
+import { useTranslation } from "react-i18next";
+import "../i18n";
 
-const proyectos = [
+export default function Projects() {
+  const [visible, setVisible] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [loadedImages, setLoadedImages] = useState({});
+  const { t } = useTranslation();
+
+  const proyectos = [
   {
-    nombre: "ERP Empresarial Interno",
-    descripcion:
-      "Sistema ERP interno desarrollado durante prácticas profesionales en una consultora de tecnología. Gestiona clientes, empleados, contenidos, blog y reclutamiento con control de accesos por roles.",
+    nombre: t("projects.0.name"),
+    descripcion: t("projects.0.description"),
     tecnologias: [
       "TypeScript",
       "NestJS",
@@ -18,13 +25,12 @@ const proyectos = [
       "Postman",
     ],
     link: "#",
-    tipo: "ERP / Full Stack",
+    tipo: t("projects.0.type"),
     imagenes: ["/images/erp-startup-1.png", "/images/erp-startup-2.png"],
   },
   {
-    nombre: "ERP para Empresa de Seguridad Privada",
-    descripcion:
-      "Sistema ERP para la gestión de inventarios, proyectos y reportes automáticos. Incluyó levantamiento de requerimientos y entregas incrementales bajo metodología Scrum.",
+    nombre: t("projects.1.name"),
+    descripcion: t("projects.1.description"),
     tecnologias: [
       "JavaScript",
       "HTML",
@@ -33,13 +39,12 @@ const proyectos = [
       "Supabase",
     ],
     link: "#",
-    tipo: "Desktop App / ERP",
+    tipo: t("projects.1.type"),
     imagenes: ["/images/erp-seguridad-1.png", "/images/erp-seguridad-2.png"],
   },
   {
-    nombre: "Chatbot Inteligente de Medicamentos",
-    descripcion:
-      "Chatbot con inteligencia artificial para consulta de medicamentos del sector salud. Utiliza NLP para interpretar preguntas y responder con información médica estructurada.",
+    nombre: t("projects.2.name"),
+    descripcion: t("projects.2.description"),
     tecnologias: [
       "Python",
       "TensorFlow",
@@ -47,13 +52,12 @@ const proyectos = [
       "Base de datos IMSS",
     ],
     link: "#",
-    tipo: "IA / NLP",
+    tipo: t("projects.2.type"),
     imagenes: ["/images/chatbot-1.png", "/images/chatbot-2.png"],
   },
   {
-    nombre: "Portafolio Profesional",
-    descripcion:
-      "Portafolio web personal para presentar experiencia, proyectos y stack tecnológico, con diseño responsivo y animaciones modernas.",
+    nombre: t("projects.3.name"),
+    descripcion: t("projects.3.description"),
     tecnologias: [
       "React",
       "Vite",
@@ -61,17 +65,10 @@ const proyectos = [
       "Framer Motion",
     ],
     link: "https://benjamincarreon.vercel.app",
-    tipo: "Web App",
+    tipo: t("projects.3.type"),
     imagenes: ["/images/portfolio-1.png", "/images/portfolio-2.png"],
   },
 ];
-
-
-
-export default function Projects() {
-  const [visible, setVisible] = useState(false);
-  const [selectedProject, setSelectedProject] = useState(null);
-  const [loadedImages, setLoadedImages] = useState({});
 
   const handleImageLoad = (index) => {
   requestAnimationFrame(() => {
@@ -104,9 +101,9 @@ export default function Projects() {
     >
       <Background variant="projects" />
 
-      <div className="relative z-10 col-span-full max-w-5xl w-full text-center md:text-left">
-        <h2 className="text-3xl sm:text-5xl font-bold text-primary mb-12">
-          Proyectos
+      <div className="relative z-10 w-full mx-auto ">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-12 text-center md:text-left">
+          {t("projects.title")}
         </h2>
       </div>
 
@@ -225,7 +222,7 @@ export default function Projects() {
               target="_blank"
               className="inline-block bg-primary text-black font-bold text-sm sm:text-base px-5 py-2 rounded hover:bg-primary/80 transition"
             >
-              Ver Proyecto
+              {t("projects.button")}
             </a>
           </div>
         </div>

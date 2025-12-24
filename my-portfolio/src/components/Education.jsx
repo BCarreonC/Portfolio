@@ -1,46 +1,44 @@
 import { useEffect, useState, useRef } from "react";
 import Background from "./ui/Background";
+import { useTranslation } from "react-i18next";
+import "../i18n";
 
-const educacion = [
+export default function Education() {
+  const [visible, setVisible] = useState(false);
+  const sectionRef = useRef(null);
+  const { t } = useTranslation();
+
+  const educacion = [
   {
-    institucion: "Universidad Autónoma de Querétaro (UAQ)",
-    grado: "Ingeniería en Software — Egresado",
-    periodo: "2021 – 2025",
-    descripcion:
-      "Formación profesional en ingeniería de software con enfoque en desarrollo full-stack, arquitectura de sistemas, bases de datos, calidad de software y metodologías ágiles. Participación en proyectos académicos y profesionales orientados a sistemas empresariales.",
+    institucion: t("education.0.institution"),
+    grado: t("education.0.degree"),
+    periodo: t("education.0.duration"),
+    descripcion: t("education.0.description"),
   },
 ];
 
 const certificaciones = [
   {
-    nombre: "AWS Cloud Foundations",
-    periodo: "2024",
-    descripcion:
-      "Fundamentos de computación en la nube, servicios principales de AWS, arquitectura cloud, seguridad y buenas prácticas para entornos empresariales.",
+    nombre: t("certifications.0.name"),
+    periodo: t("certifications.0.date"),
+    descripcion: t("certifications.0.description"),
   },
   {
-    nombre: "Visualización de Datos con Python",
-    periodo: "2024",
-    descripcion:
-      "Análisis y visualización de datos utilizando Python para interpretación de información y apoyo a la toma de decisiones.",
+    nombre: t("certifications.1.name"),
+    periodo: t("certifications.1.date"),
+    descripcion: t("certifications.1.description"),
   },
   {
-    nombre: "Ingeniería de Datos con Python y PySpark",
-    periodo: "En curso",
-    descripcion:
-      "Procesamiento de datos a gran escala, pipelines de datos y fundamentos de ingeniería de datos utilizando PySpark.",
+    nombre: t("certifications.2.name"),
+    periodo: t("certifications.2.date"),
+    descripcion: t("certifications.2.description"),
   },
   {
-    nombre: "Prompt Engineering",
-    periodo: "En curso",
-    descripcion:
-      "Diseño y optimización de prompts para modelos de lenguaje, aplicado a soluciones de IA y automatización.",
+    nombre: t("certifications.3.name"),
+    periodo: t("certifications.3.date"),
+    descripcion: t("certifications.3.description"),
   },
 ];
-
-export default function Education() {
-  const [visible, setVisible] = useState(false);
-  const sectionRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -71,7 +69,7 @@ export default function Education() {
       {/* TÍTULO */}
       <div className="relative z-10 max-w-5xl w-full text-center md:text-left mb-12">
         <h2 className="text-3xl sm:text-5xl font-bold text-primary">
-          Educación
+          {t("education.title")}
         </h2>
       </div>
 
@@ -110,7 +108,7 @@ export default function Education() {
         style={{ transitionDelay: "200ms" }}
       >
         <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-8">
-          Certificaciones
+          {t("certifications.title")}
         </h2>
       </div>
 

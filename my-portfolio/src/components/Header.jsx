@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, FileText } from "lucide-react";
+import { Menu, X, FileText, LucideLanguages, CodeXml } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import "../i18n";
 
@@ -31,32 +31,30 @@ export default function Header() {
       <div className="container mx-auto px-6 md:px-4 py-4 flex justify-between items-center">
         {/* Logo */}
         <a
-          href="#"
-          className="inline-flex items-center justify-center hover:scale-105 transition-transform duration-300"
-        >
-          <svg
-            width="64"
-            height="64"
-            viewBox="0 0 100 100"
-            className="stroke-primary text-primary fill-transparent logo-animation"
-          >
-            <polygon
-              points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5"
-              strokeWidth="4"
-            />
-            <text
-              x="50%"
-              y="55%"
-              textAnchor="middle"
-              dominantBaseline="middle"
-              fontSize="36"
-              fontWeight="bold"
-              fill="currentColor"
-            >
-              B
-            </text>
-          </svg>
-        </a>
+  href="#"
+  className="inline-flex items-center justify-center hover:scale-105 transition-transform duration-300"
+>
+  <svg
+    width="64"
+    height="64"
+    viewBox="0 0 100 100"
+    className="stroke-primary text-primary fill-transparent logo-animation"
+  >
+    {/* Hexágono */}
+    <polygon
+      points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5"
+      strokeWidth="4"
+    />
+
+    {/* Icono codigo centrado */}
+    <foreignObject x="22" y="28" width="60" height="45">
+      <div className="flex items-center justify-center w-full h-full">
+        <CodeXml size={50} className="text-primary" />
+      </div>
+    </foreignObject>
+  </svg>
+</a>
+
 
         {/* Menú escritorio */}
         <nav className="hidden md:flex items-center space-x-6 text-sm">
@@ -73,12 +71,13 @@ export default function Header() {
           </div>
           {/* Botón para cambiar idioma */}
           <button
-            className="text-primary cursor-pointer border border-primary rounded px-4 py-2 hover:bg-primary/10 transition-colors"
+            className="flex items-center text-primary cursor-pointer border border-primary rounded px-4 py-2 hover:bg-primary/10 transition-colors"
             onClick={() =>
               i18n.changeLanguage(i18n.language === "es" ? "en" : "es")
             }
           >
-            {i18n.language === "es" ? "EN" : "ES"}
+            <LucideLanguages size={20} className="mr-2"/>
+            {i18n.language === "es" ?  "EN" : "ES"}
           </button>
 
           {/* Botón para abrir el CV */}
@@ -86,19 +85,13 @@ export default function Header() {
             onClick={handleOpenCV}
             className="text-primary cursor-pointer border border-primary rounded px-4 py-2 hover:bg-primary/10 transition-colors"
           >
-            Currículum
+            {t("header.cv")}
           </button>
         </nav>
 
-        {/* Botón menú móvil */}
+        {/* Menú móvil */}
         <div className="flex items-center space-x-4 md:hidden">
-          <button
-            onClick={() => setMenuOpen(true)}
-            className="flex items-center justify-center w-12 h-12 border border-primary rounded text-primary hover:bg-primary/10 cursor-pointer focus:outline-none transition-colors"
-          >
-            <Menu size={22} />
-          </button>
-
+          
           {/* Botón CV móvil */}
           <button
             onClick={handleOpenCV}
@@ -106,6 +99,24 @@ export default function Header() {
           >
             <FileText size={22} />
             CV
+          </button>
+
+          {/* Botón para cambiar idioma */}
+          <button
+            className="text-primary cursor-pointer border border-primary rounded h-12 px-4 py-2 mr-6 hover:bg-primary/10 transition-colors"
+            onClick={() =>
+              i18n.changeLanguage(i18n.language === "es" ? "en" : "es")
+            }
+          >
+            {i18n.language === "es" ? <LucideLanguages /> : <LucideLanguages />}
+          </button>
+
+          {/* boton menú móvil */}
+          <button
+            onClick={() => setMenuOpen(true)}
+            className="flex items-center justify-center w-12 h-12 border border-primary rounded text-primary hover:bg-primary/10 cursor-pointer focus:outline-none transition-colors"
+          >
+            <Menu size={22} />
           </button>
         </div>
       </div>

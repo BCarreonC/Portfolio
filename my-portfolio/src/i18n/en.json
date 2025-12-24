@@ -1,9 +1,91 @@
 {
+  "email_sidebar": {
+    "copied": "¡Email copied!"
+  },
   "header": {
     "about": "About me",
     "experience": "Experience",
     "projects": "Projects",
     "education": "Education",
     "cv": "Resume"
+  }
+  ,"hero":{
+    "phrases": {
+      "phrase1": "Software Engineer | Fullstack Developer.",
+      "phrase2": "I build digital experiences with purpose.",
+      "phrase3": "I develop functional and user-centered software.",
+      "phrase4": "I design modern interfaces with React and Tailwind.",
+      "phrase5": "I create tools that facilitate work and connect ideas.",
+      "phrase6": "I transform complexity into simple and elegant solutions."
+    },
+    "greeting": "Hello, my name is",
+    "name": "Benjamín Carreón",
+    "description": "I am a software developer specializing in building exceptional digital experiences. I am currently focused on creating accessible and human-centered products.",
+    "cta_projects": "See my projects"
+  }
+  ,"experience": {
+    "title": "Experience",
+    "0": {
+      "company": "Technology Consulting (Startup)",
+      "role": "Junior Full-Stack Developer (Internship)",
+      "duration": "August 2025 – October 2025",
+      "description": "I participated in the design and implementation of an internal ERP system for managing clients, employees, content, and recruitment processes. I implemented JWT authentication, role-based access control, and served as a lead developer in UX/UI decisions, working under agile methodologies with daily feedback from the engineering team."
+    }
+  }
+  ,"projects": {
+    "title": "Projects",
+    "button": "View project",
+    "0": {
+      "name": "Internal Business ERP",
+      "description": "Internal ERP system developed during a professional internship at a technology consulting firm. It manages clients, employees, content, blog, and recruitment with role-based access control.",
+      "type": "ERP / Full Stack"
+    }
+    ,"1": {
+      "name": "ERP for Private Security Company",
+      "description": "ERP system for managing inventories, projects, and automatic reports. Included requirements gathering and incremental deliveries under Scrum methodology.",
+      "type": "Desktop / ERP"
+    }
+    ,"2": {
+      "name": "Intelligent Medication Chatbot",
+      "description": "AI-powered chatbot for querying medications in the healthcare sector. It uses NLP to interpret questions and respond with structured medical information.",
+      "type": "AI / NLP"
+    }
+    ,"3": {
+      "name": "Professional Portfolio",
+      "description": "Personal web portfolio to showcase experience, projects, and tech stack, with responsive design and modern animations.",
+      "type": "Web / Frontend"
+    }
+  }
+  ,"education": {
+    "title": "Education",
+    "0": {
+      "institution": "Universidad Autónoma de Querétaro (UAQ)",
+      "degree": "Software Engineering — Graduate",
+      "duration": "July 2021 – December 2025",
+      "description": "Professional training in software engineering with a focus on full-stack development, system architecture, databases, software quality, and agile methodologies. Participation in academic and professional projects oriented towards enterprise systems."
+    }
+  },
+  "certifications": {
+    "title": "Certifications",
+    "0": {
+      "name": "AWS Cloud Foundations",
+      "date": "2024",
+      "description": "Fundamentals of cloud computing, main AWS services, cloud architecture, security, and best practices for enterprise environments."
+    },
+    "1": {
+      "name": "Data Visualization with Python",
+      "date": "2024",
+      "description": "Analysis and visualization of data using Python for information interpretation and decision-making support."
+    },
+    "2": {
+      "name": "Data Engineering with Python and PySpark",
+      "date": "In progress",
+      "description": "Processing of large-scale data, data pipelines, and fundamentals of data engineering using PySpark."
+    },
+    "3": {
+      "name": "Prompt Engineering",
+      "date": "In progress",
+      "description": "Design and optimization of prompts for language models, applied to AI solutions and automation."
+    }
   }
 }
