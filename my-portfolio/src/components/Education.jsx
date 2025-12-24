@@ -116,8 +116,12 @@ const certificaciones = [
       {certificaciones.map((cert, i) => (
         <div
           key={i}
-          className={`relative z-10 bg-gray-950 bg-opacity-60 backdrop-blur-md p-5 rounded-xl shadow-md mb-6 w-full max-w-5xl transition-all duration-700 transform ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-            }`}
+          className={`relative z-10 bg-gray-950 bg-opacity-60 backdrop-blur-md p-5 rounded-xl shadow-md mb-6 w-full max-w-5xl
+  transition-all duration-700 transform
+  hover:-translate-y-1 hover:shadow-primary/30
+  ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}
+`}
+
           style={{ transitionDelay: `${300 + i * 120}ms` }}
         >
           <div className="flex justify-between items-center mb-1">
