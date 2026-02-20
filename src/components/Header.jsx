@@ -10,8 +10,8 @@ export default function Header() {
   // 🔗 Ruta al archivo PDF de tu CV (debes colocarlo en la carpeta public/)
   const cvUrl =
     i18n.language === "es"
-      ? "/cv/CV_BenjaminCarreónCadenas.pdf"
-      : "/cv/CV_BenjaminCarreónCadenas.pdf";
+      ? "/cv/CV_BenjaminCarreónCadenas_IngSoftware.pdf"
+      : "/cv/CV_BenjaminCarreónCadenas_EngSoftware.pdf";
 
   const links = [
     { id: "00", label: t("header.about"), href: "#about" },
