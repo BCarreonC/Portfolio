@@ -34,7 +34,8 @@
   }
   ,"projects": {
     "title": "Projects",
-    "button": "View project",
+    "button1": "View project",
+    "button2": "View code",
     "0": {
       "name": "Internal Business ERP",
       "description": "Internal ERP system developed during a professional internship at a technology consulting firm. It manages clients, employees, content, blog, and recruitment with role-based access control.",

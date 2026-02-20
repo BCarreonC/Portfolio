@@ -1,0 +1,111 @@
+/* ======================================================
+   Swiper PROYECTOS – sobrescribe Swiper default
+   ====================================================== */
+
+.project-swiper.swiper {
+  --swiper-navigation-color: var(--color-primary);
+}
+
+/* Botones */
+.project-swiper .swiper-button-next,
+.project-swiper .swiper-button-prev {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+
+  background: var(--color-background-dark);
+  backdrop-filter: blur(8px);
+
+  border: 1px solid color-mix(
+    in srgb,
+    var(--color-primary) 35%,
+    transparent
+  );
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+
+  transition: all 0.25s ease;
+}
+
+/* Flechas */
+.project-swiper .swiper-button-next::after,
+.project-swiper .swiper-button-prev::after {
+  color: var(--color-primary) !important;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Hover */
+.project-swiper .swiper-button-next:hover,
+.project-swiper .swiper-button-prev:hover {
+  background: color-mix(
+    in srgb,
+    var(--color-background-dark) 85%,
+    black
+  );
+
+  box-shadow: 0 0 14px
+    color-mix(in srgb, var(--color-primary) 45%, transparent);
+
+  transform: scale(1.08);
+}
+
+/* ======================================================
+   Thumbnails – Galería de proyectos
+   ====================================================== */
+
+.project-swiper-thumbs {
+  margin: 1.5rem 0;
+  padding-top: 0.5rem;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+}
+
+/* Cada slide */
+.project-swiper-thumbs .swiper-slide {
+  position: relative;
+}
+
+/* Imagen base */
+.project-swiper-thumbs .swiper-slide img {
+  opacity: 0.45;
+  transform: scale(0.94);
+  border-radius: 0.25rem;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    outline 0.2s ease;
+}
+
+/* Hover */
+.project-swiper-thumbs .swiper-slide:hover img {
+  opacity: 0.75;
+  transform: scale(0.97);
+}
+
+/* === ACTIVO === */
+.project-swiper-thumbs .swiper-slide-thumb-active img {
+  opacity: 1;
+  transform: scale(1);
+
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+
+  box-shadow:
+    0 0 14px
+    color-mix(in srgb, var(--color-primary) 45%, transparent);
+}
+
+/* Barra inferior activa
+.project-swiper-thumbs .swiper-slide-thumb-active::after {
+  content: "";
+  position: absolute;
+  left: 0%;
+  bottom: -16px;
+  width: 95%;
+  height: 3px;
+  border-radius: 9999px;
+  background: var(--color-primary);
+} */
+

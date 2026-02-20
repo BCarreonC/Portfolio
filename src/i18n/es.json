@@ -34,7 +34,8 @@
   },
   "projects": {
     "title": "Proyectos",
-    "button": "Ver proyecto",
+    "button1": "Ver proyecto",
+    "button2": "Ver código",
     "0": {
       "name": "ERP Empresarial Interno",
       "description": "Sistema ERP interno desarrollado durante prácticas profesionales en una consultora de tecnología. Gestiona clientes, empleados, contenidos, blog y reclutamiento con control de accesos por roles.",
