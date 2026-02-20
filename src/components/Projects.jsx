@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import "../i18n";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Thumbs } from "swiper/modules";
-
+import { FaGithub as GitHub } from "react-icons/fa";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -60,7 +60,10 @@ export default function Projects() {
         "Vault",
         "Postman",
       ],
-      link: "#",
+      liveVisibility: true,
+      liveLink: "https://elvoratec.com/",
+      githubVisibility: false,
+      githubLink: "#",
       tipo: t("projects.0.type"),
       imagenes: [
         {
@@ -135,7 +138,10 @@ export default function Projects() {
       nombre: t("projects.1.name"),
       descripcion: t("projects.1.description"),
       tecnologias: ["JavaScript", "HTML", "CSS", "Electron", "Supabase"],
-      link: "#",
+      liveVisibility: false,
+      liveLink: "#",
+      githubVisibility: false,
+      githubLink: "#",
       tipo: t("projects.1.type"),
       imagenes: [],
     },
@@ -143,7 +149,10 @@ export default function Projects() {
       nombre: t("projects.2.name"),
       descripcion: t("projects.2.description"),
       tecnologias: ["Python", "TensorFlow", "NLP", "Base de datos IMSS"],
-      link: "#",
+      liveVisibility: false,
+      liveLink: "#",
+      githubVisibility: false,
+      githubLink: "#",
       tipo: t("projects.2.type"),
       imagenes: [],
     },
@@ -151,7 +160,10 @@ export default function Projects() {
       nombre: t("projects.3.name"),
       descripcion: t("projects.3.description"),
       tecnologias: ["React", "Vite", "Tailwind CSS", "Framer Motion"],
-      link: "https://benjamincarreon.vercel.app",
+      liveVisibility: false,
+      liveLink: "#",
+      githubVisibility: false,
+      githubLink: "#",
       tipo: t("projects.3.type"),
       imagenes: [],
     },
@@ -348,26 +360,60 @@ export default function Projects() {
               </div>
             )}
             {/* Botones de acción */}
-            <div className=" flex flex-wrap gap-4 mt-6 justify-center sm:justify-start">
-              <a
-              href={selectedProject.link}
-              target="_blank"
-              className="inline-block bg-primary text-black font-bold text-sm sm:text-base px-5 py-2 rounded hover:bg-primary/80 transition"
-            >
-              {t("projects.button1")}
-            </a>
-            <div>
-              <github className="inline-block mr-2" size={18} />
-              <a
-              href={selectedProject.link}
-              target="_blank"
-              className="inline-block bg-primary text-black font-bold text-sm sm:text-base px-5 py-2 rounded hover:bg-primary/80 transition"
-            >
-              {t("projects.button2")}
-            </a>
-            </div>
+            <div className="flex flex-col gap-4 mt-6">
+  <div className="flex flex-wrap gap-4 justify-center sm:justify-start">
 
-            </div>
+    {/* === DEMO / LIVE === */}
+    {selectedProject.liveVisibility &&
+    selectedProject.liveLink &&
+    selectedProject.liveLink !== "#" ? (
+      <a
+        href={selectedProject.liveLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block bg-primary text-black font-bold px-5 py-2 rounded hover:bg-primary/80 transition"
+      >
+        {t("projects.button1")}
+      </a>
+    ) : (
+      <button
+        disabled
+        className="inline-block bg-gray-700 text-gray-400 font-bold px-5 py-2 rounded cursor-not-allowed"
+      >
+        Demo no disponible
+      </button>
+    )}
+
+    {/* === GITHUB === */}
+    {selectedProject.githubVisibility &&
+    selectedProject.githubLink &&
+    selectedProject.githubLink !== "#" ? (
+      <a
+        href={selectedProject.githubLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 bg-gray-800 text-white font-semibold px-5 py-2 rounded hover:bg-gray-700 transition"
+      >
+        <GitHub size={18} />
+        {t("projects.button2")}
+      </a>
+    ) : (
+      <button
+        disabled
+        className="inline-flex items-center gap-2 bg-gray-700 text-gray-400 font-semibold px-5 py-2 rounded cursor-not-allowed"
+      >
+        <GitHub size={18} />
+        Código no disponible
+      </button>
+    )}
+  </div>
+
+  {/* === MENSAJE SIEMPRE VISIBLE === */}
+  <div className="text-sm text-gray-400 italic bg-gray-800/60 px-4 py-2 rounded max-w-fit">
+    Código y/o acceso no disponibles por confidencialidad o estado del proyecto.
+  </div>
+</div>
+
           </div>
         </div>
       )}
