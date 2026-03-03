@@ -7,12 +7,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Thumbs } from "swiper/modules";
 import { FaGithub as GitHub } from "react-icons/fa";
 
+{/* === Importación de estilos Swiper === */}
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
 import "../styles/swiper-custom.css";
 
+{/* === Imágenes del proyecto Elvoratec ERP === */}
 import adminAgregarVacante from "../assets/elvoratec-erp/admin-agregarvacante.png";
 import adminArticuloEdit from "../assets/elvoratec-erp/admin-articuloedit.png";
 import adminArticulonew from "../assets/elvoratec-erp/admin-articulonew.png";
@@ -69,68 +71,70 @@ export default function Projects() {
         {
           src: adminPrincipal,
           descripcion:
-            "Dashboard principal del sistema con métricas y accesos rápidos.",
+            t("projects.0.images.adminPrincipal"),
         },
         {
           src: adminClientes,
           descripcion:
-            "Módulo de gestión de clientes con altas, edición y búsqueda.",
+            t("projects.0.images.adminClientes"),
         },
         {
           src: adminEmpleados,
-          descripcion: "Administración de empleados y asignación de roles.",
+          descripcion:
+            t("projects.0.images.adminEmpleados"),
         },
         {
           src: adminVacantes,
           descripcion:
-            "Gestión de vacantes con creación, edición y publicación.",
+            t("projects.0.images.adminVacantes"),
         },
         {
           src: adminCandidatos,
           descripcion:
-            "Panel de candidatos con filtros, detalles y gestión de estados.",
+            t("projects.0.images.adminCandidatos"),
         },
         {
           src: adminProyectos,
           descripcion:
-            "Módulo de proyectos con seguimiento de tareas, tiempos y recursos.",
+            t("projects.0.images.adminProyectos"),
         },
         {
           src: adminCursos,
           descripcion:
-            "Gestión de cursos y capacitaciones para empleados y clientes.",
+            t("projects.0.images.adminCursos"),
         },
         {
           src: adminAgregarVacante,
-          descripcion: "Formulario para agregar nuevas vacantes al sistema.",
+          descripcion: t("projects.0.images.adminAgregarVacante"),
         },
         {
           src: adminArticulonew,
           descripcion:
-            "Interfaz para crear nuevos artículos en el módulo de blogs.",
+            t("projects.0.images.adminArticulonew"),
         },
         {
           src: adminArticuloEdit,
-          descripcion: "Edición de artículos con vista previa en tiempo real.",
+          descripcion:
+            t("projects.0.images.adminArticuloEdit"),
         },
         {
           src: blogsArticulos,
           descripcion:
-            "Listado de artículos publicados con opciones de edición y eliminación.",
+            t("projects.0.images.blogsArticulos"),
         },
         {
           src: landingInicio,
           descripcion:
-            "Landing page principal del sistema con información general y acceso al dashboard.",
+            t("projects.0.images.landingInicio"),
         },
         {
           src: landingPortafolio,
           descripcion:
-            "Sección de portafolio con proyectos destacados y casos de éxito.",
+            t("projects.0.images.landingPortafolio"), 
         },
         {
           src: adminProspectos,
-          descripcion: "Módulo de prospectos con altas, edición y búsqueda.",
+          descripcion: t("projects.0.images.adminProspectos"),
         },
       ],
     },
@@ -294,7 +298,7 @@ export default function Projects() {
                       <SwiperSlide key={i}>
                         <div className="relative w-full h-56 sm:h-64 md:h-72">
                           <div className="absolute top-3 right-3 bg-black/60 text-white text-xs px-3 py-1 rounded">
-                            Click para ampliar
+                            {t("projects.view_image")} {i + 1} / {images.length}
                           </div>
 
                           <img
@@ -356,7 +360,7 @@ export default function Projects() {
               </>
             ) : (
               <div className="text-center text-gray-400 py-10">
-                Este proyecto no tiene capturas disponibles aún.
+                {t("projects.no_images")}
               </div>
             )}
             {/* Botones de acción */}
@@ -380,7 +384,7 @@ export default function Projects() {
         disabled
         className="inline-block bg-gray-700 text-gray-400 font-bold px-5 py-2 rounded cursor-not-allowed"
       >
-        Demo no disponible
+        {t("projects.demo_unavailable")}
       </button>
     )}
 
@@ -403,14 +407,14 @@ export default function Projects() {
         className="inline-flex items-center gap-2 bg-gray-700 text-gray-400 font-semibold px-5 py-2 rounded cursor-not-allowed"
       >
         <GitHub size={18} />
-        Código no disponible
+        {t("projects.code_unavailable")}
       </button>
     )}
   </div>
 
   {/* === MENSAJE SIEMPRE VISIBLE === */}
   <div className="text-sm text-gray-400 italic bg-gray-800/60 px-4 py-2 rounded max-w-fit">
-    Código y/o acceso no disponibles por confidencialidad o estado del proyecto.
+    {t("projects.always_visible")}
   </div>
 </div>
 

@@ -36,10 +36,31 @@
     "title": "Projects",
     "button1": "View project",
     "button2": "View code",
+    "no_images": "No images available for this project.",
+    "demo_unavailable": "Demo not available.",
+    "code_unavailable": "Code not available.",
+    "always_visible": "Code and/or access not available due to confidentiality or project status.",
+    "view_image": "Zoom in on image",
     "0": {
       "name": "Internal Business ERP",
       "description": "Internal ERP system developed during a professional internship at a technology consulting firm. It manages clients, employees, content, blog, and recruitment with role-based access control.",
-      "type": "ERP / Full Stack"
+      "type": "ERP / Full Stack",
+      "images": {
+        "adminPrincipal": "Main dashboard with metrics and quick access.",
+        "adminClientes": "Client management module with high, edit, and search.",
+        "adminEmpleados": "Employee administration and role assignment.",
+        "adminVacantes": "Vacancy management with creation, edit, and publication.",
+        "adminCandidatos": "Candidate panel with filters, details, and state management.",
+        "adminProyectos": "Project module with task tracking, times, and resources.",
+        "adminProspectos": "Prospect management module with creation, edit, and search.",
+        "adminCursos": "Course and training management for employees and clients.",
+        "adminAgregarVacante": "Form to add new vacancies to the system.",
+        "adminArticulonew": "Interface to create new articles in the blog module.",
+        "adminArticuloEdit": "Article edition with real-time preview.",
+        "blogsArticulos": "List of published articles with edit and delete options.",
+        "landingInicio": "Main landing page with general information and access to the dashboard.",
+        "landingPortafolio": "Portfolio section with featured projects and success stories."
+      }
     }
     ,"1": {
       "name": "ERP for Private Security Company",

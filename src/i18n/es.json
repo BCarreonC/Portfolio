@@ -36,15 +36,37 @@
     "title": "Proyectos",
     "button1": "Ver proyecto",
     "button2": "Ver código",
+    "no_images": "No hay imágenes disponibles para este proyecto.",
+    "demo_unavailable": "Demo no disponible.",
+    "code_unavailable": "Código no disponible.",
+    "always_visible": "Código y/o acceso no disponibles por confidencialidad o estado del proyecto.",
+    "view_image": "Ampliar imagen",
     "0": {
       "name": "ERP Empresarial Interno",
       "description": "Sistema ERP interno desarrollado durante prácticas profesionales en una consultora de tecnología. Gestiona clientes, empleados, contenidos, blog y reclutamiento con control de accesos por roles.",
-      "type": "ERP / Full Stack"
+      "type": "ERP / Full Stack",
+      "images": {
+        "adminPrincipal": "Dashboard principal del sistema con métricas y accesos rápidos.",
+        "adminClientes": "Módulo de gestión de clientes con altas, edición y búsqueda.",
+        "adminEmpleados": "Administración de empleados y asignación de roles.",
+        "adminVacantes": "Gestión de vacantes con creación, edición y publicación.",
+        "adminCandidatos": "Panel de candidatos con filtros, detalles y gestión de estados.",
+        "adminProyectos": "Módulo de proyectos con seguimiento de tareas, tiempos y recursos.",
+        "adminCursos": "Gestión de cursos y capacitaciones para empleados y clientes.",
+        "adminAgregarVacante": "Formulario para agregar nuevas vacantes al sistema.",
+        "adminArticulonew":"Interfaz para crear nuevos artículos en el módulo de blogs.",
+        "adminArticuloEdit": "Edición de artículos con vista previa en tiempo real.",
+        "blogsArticulos": "Listado de artículos publicados con opciones de edición y eliminación.",
+        "landingInicio": "Landing page principal del sistema con información general y acceso al dashboard.",
+        "landingPortafolio": "Sección de portafolio con proyectos destacados y casos de éxito.",
+        "adminProspectos": "Módulo de prospectos con altas, edición y búsqueda."
+      }
     },
     "1": {
       "name": "ERP para Empresa de Seguridad Privada",
       "description": "Sistema ERP para la gestión de inventarios, proyectos y reportes automáticos. Incluyó levantamiento de requerimientos y entregas incrementales bajo metodología Scrum.",
       "type": "Desktop / ERP"
+
     },
     "2": {
       "name": "Chatbot Inteligente de Medicamentos",
