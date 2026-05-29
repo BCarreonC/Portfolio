@@ -29,7 +29,7 @@
       "company": "Consultora de Tecnología (Startup)",
       "role": "Desarrollador Full-Stack Jr. (Prácticas Profesionales)",
       "duration": "Agosto 2025 – Octubre 2025",
-      "description": "Participé en el diseño e implementación de un sistema ERP interno para la gestión de clientes, empleados, contenidos y procesos de reclutamiento. Implementé autenticación con JWT, control de accesos por roles y participé como desarrollador principal en decisiones de UX/UI, trabajando bajo metodologías ágiles con retroalimentación diaria del equipo de ingeniería."
+      "description": "Participé en el diseño y desarrollo de un sistema ERP empresarial enfocado en la gestión de clientes, empleados, proyectos, contenidos y procesos de reclutamiento. Desarrollé módulos frontend y backend utilizando React, TypeScript y NestJS, implementando autenticación JWT, control de accesos por roles y APIs REST modulares. Colaboré en funcionalidades CMS, gestión de vacantes y candidatos, carga de archivos con MinIO y arquitectura orientada a escalabilidad. Trabajé bajo metodologías ágiles con seguimiento diario y participación activa en decisiones de UX/UI y arquitectura del sistema."
     }
   },
   "projects": {

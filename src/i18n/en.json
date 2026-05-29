@@ -29,7 +29,7 @@
       "company": "Technology Consulting (Startup)",
       "role": "Junior Full-Stack Developer (Internship)",
       "duration": "August 2025 – October 2025",
-      "description": "I participated in the design and implementation of an internal ERP system for managing clients, employees, content, and recruitment processes. I implemented JWT authentication, role-based access control, and served as a lead developer in UX/UI decisions, working under agile methodologies with daily feedback from the engineering team."
+      "description": "I participated in the design and development of an enterprise ERP system focused on managing clients, employees, projects, content, and recruitment processes. I developed frontend and backend modules using React, TypeScript, and NestJS, implementing JWT authentication, role-based access control, and modular REST APIs. I collaborated on CMS functionalities, vacancy and candidate management, file uploads with MinIO, and architecture oriented towards scalability. I worked under agile methodologies with daily tracking and active participation in UX/UI decisions and system architecture."
     }
   }
   ,"projects": {

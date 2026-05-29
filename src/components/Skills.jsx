@@ -68,7 +68,6 @@ const techStack = [
   { name: "Tailwind CSS", icon: <SiTailwindcss className="text-sky-400 text-5xl" /> },
 
   { name: "Postman", icon: <SiPostman className="text-orange-400 text-5xl" /> },
-
   { name: "Git", icon: <FaGitAlt className="text-orange-500 text-5xl" /> },
   { name: "GitHub", icon: <FaGithub className="text-gray-300 text-5xl" /> },
 
