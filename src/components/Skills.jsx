@@ -8,6 +8,7 @@ import {
   FaDocker,
   FaGitAlt,
   FaJsSquare,
+  FaGithub,
 } from "react-icons/fa";
 import {
   SiTailwindcss,
@@ -19,6 +20,8 @@ import {
   SiNestjs,
   SiPostman,
   SiTensorflow,
+  SiVault
+  
 } from "react-icons/si";
 
 /* --- Subcomponente reutilizable para el blur de los bordes --- */
@@ -65,10 +68,15 @@ const techStack = [
   { name: "Tailwind CSS", icon: <SiTailwindcss className="text-sky-400 text-5xl" /> },
 
   { name: "Postman", icon: <SiPostman className="text-orange-400 text-5xl" /> },
+
   { name: "Git", icon: <FaGitAlt className="text-orange-500 text-5xl" /> },
+  { name: "GitHub", icon: <FaGithub className="text-gray-300 text-5xl" /> },
 
   { name: "Python", icon: <FaPython className="text-yellow-400 text-5xl" /> },
   { name: "TensorFlow", icon: <SiTensorflow className="text-orange-500 text-5xl" /> },
+
+  { name: "Vault", icon: <SiVault className="text-blue-500 text-5xl" /> },
+  
 ];
 
 
