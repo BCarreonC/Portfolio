@@ -82,32 +82,44 @@
     "title": "Education",
     "0": {
       "institution": "Universidad Autónoma de Querétaro (UAQ)",
-      "degree": "Software Engineering — Graduate",
+      "degree": "Software Engineering | Graduate",
       "duration": "July 2021 – December 2025",
       "description": "Professional training in software engineering with a focus on full-stack development, system architecture, databases, software quality, and agile methodologies. Participation in academic and professional projects oriented towards enterprise systems."
     }
+    ,"1": {
+      "institution": "Platzi | Online Technology School",
+      "degree": "Complementary Training in Full Stack Development",
+      "duration": "2025 - Present",
+      "description": "Continuing education in modern technologies and tools for full stack development, including React, TypeScript, NestJS, Node.js, REST APIs, JWT authentication, Docker, and software architecture, with a practical approach based on projects."
+    }
+
   },
   "certifications": {
     "title": "Certifications",
     "0": {
-      "name": "AWS Cloud Foundations",
-      "date": "2024",
+      "name": "AWS Cloud Foundations - AWS",
+      "date": "Completed in 2024",
       "description": "Fundamentals of cloud computing, main AWS services, cloud architecture, security, and best practices for enterprise environments."
     },
     "1": {
-      "name": "Data Visualization with Python",
-      "date": "2024",
+      "name": "Data Visualization with Python - UAQ",
+      "date": "Completed in 2024",
       "description": "Analysis and visualization of data using Python for information interpretation and decision-making support."
     },
     "2": {
-      "name": "Data Engineering with Python and PySpark",
-      "date": "In progress",
+      "name": "Data Engineering with Python and PySpark - UAQ",
+      "date": "Completed in 2026",
       "description": "Processing of large-scale data, data pipelines, and fundamentals of data engineering using PySpark."
     },
     "3": {
-      "name": "Prompt Engineering",
+      "name": "Prompt Engineering - Platzi",
       "date": "In progress",
       "description": "Design and optimization of prompts for language models, applied to AI solutions and automation."
+    },
+    "4": {
+      "name": "Fundamentals of Docker - Platzi",
+      "date": "Completed in 2025",
+      "description": "Basic concepts of containers, container creation and management with Docker, and its application in development and production environments."
     }
   }
 }

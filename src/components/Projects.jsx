@@ -7,14 +7,18 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Thumbs } from "swiper/modules";
 import { FaGithub as GitHub } from "react-icons/fa";
 
-{/* === Importación de estilos Swiper === */}
+{
+  /* === Importación de estilos Swiper === */
+}
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
 import "../styles/swiper-custom.css";
 
-{/* === Imágenes del proyecto Elvoratec ERP === */}
+{
+  /* === Imágenes del proyecto Elvoratec ERP === */
+}
 import adminAgregarVacante from "../assets/elvoratec-erp/admin-agregarvacante.png";
 import adminArticuloEdit from "../assets/elvoratec-erp/admin-articuloedit.png";
 import adminArticulonew from "../assets/elvoratec-erp/admin-articulonew.png";
@@ -70,38 +74,31 @@ export default function Projects() {
       imagenes: [
         {
           src: adminPrincipal,
-          descripcion:
-            t("projects.0.images.adminPrincipal"),
+          descripcion: t("projects.0.images.adminPrincipal"),
         },
         {
           src: adminClientes,
-          descripcion:
-            t("projects.0.images.adminClientes"),
+          descripcion: t("projects.0.images.adminClientes"),
         },
         {
           src: adminEmpleados,
-          descripcion:
-            t("projects.0.images.adminEmpleados"),
+          descripcion: t("projects.0.images.adminEmpleados"),
         },
         {
           src: adminVacantes,
-          descripcion:
-            t("projects.0.images.adminVacantes"),
+          descripcion: t("projects.0.images.adminVacantes"),
         },
         {
           src: adminCandidatos,
-          descripcion:
-            t("projects.0.images.adminCandidatos"),
+          descripcion: t("projects.0.images.adminCandidatos"),
         },
         {
           src: adminProyectos,
-          descripcion:
-            t("projects.0.images.adminProyectos"),
+          descripcion: t("projects.0.images.adminProyectos"),
         },
         {
           src: adminCursos,
-          descripcion:
-            t("projects.0.images.adminCursos"),
+          descripcion: t("projects.0.images.adminCursos"),
         },
         {
           src: adminAgregarVacante,
@@ -109,28 +106,23 @@ export default function Projects() {
         },
         {
           src: adminArticulonew,
-          descripcion:
-            t("projects.0.images.adminArticulonew"),
+          descripcion: t("projects.0.images.adminArticulonew"),
         },
         {
           src: adminArticuloEdit,
-          descripcion:
-            t("projects.0.images.adminArticuloEdit"),
+          descripcion: t("projects.0.images.adminArticuloEdit"),
         },
         {
           src: blogsArticulos,
-          descripcion:
-            t("projects.0.images.blogsArticulos"),
+          descripcion: t("projects.0.images.blogsArticulos"),
         },
         {
           src: landingInicio,
-          descripcion:
-            t("projects.0.images.landingInicio"),
+          descripcion: t("projects.0.images.landingInicio"),
         },
         {
           src: landingPortafolio,
-          descripcion:
-            t("projects.0.images.landingPortafolio"), 
+          descripcion: t("projects.0.images.landingPortafolio"),
         },
         {
           src: adminProspectos,
@@ -365,59 +357,57 @@ export default function Projects() {
             )}
             {/* Botones de acción */}
             <div className="flex flex-col gap-4 mt-6">
-  <div className="flex flex-wrap gap-4 justify-center sm:justify-start">
+              <div className="flex flex-wrap gap-4 justify-center sm:justify-start">
+                {/* === DEMO / LIVE === */}
+                {selectedProject.liveVisibility &&
+                selectedProject.liveLink &&
+                selectedProject.liveLink !== "#" ? (
+                  <a
+                    href={selectedProject.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block bg-primary text-black font-bold px-5 py-2 rounded hover:bg-primary/80 transition"
+                  >
+                    {t("projects.button1")}
+                  </a>
+                ) : (
+                  <button
+                    disabled
+                    className="inline-block bg-gray-700 text-gray-400 font-bold px-5 py-2 rounded cursor-not-allowed"
+                  >
+                    {t("projects.demo_unavailable")}
+                  </button>
+                )}
 
-    {/* === DEMO / LIVE === */}
-    {selectedProject.liveVisibility &&
-    selectedProject.liveLink &&
-    selectedProject.liveLink !== "#" ? (
-      <a
-        href={selectedProject.liveLink}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-block bg-primary text-black font-bold px-5 py-2 rounded hover:bg-primary/80 transition"
-      >
-        {t("projects.button1")}
-      </a>
-    ) : (
-      <button
-        disabled
-        className="inline-block bg-gray-700 text-gray-400 font-bold px-5 py-2 rounded cursor-not-allowed"
-      >
-        {t("projects.demo_unavailable")}
-      </button>
-    )}
+                {/* === GITHUB === */}
+                {selectedProject.githubVisibility &&
+                selectedProject.githubLink &&
+                selectedProject.githubLink !== "#" ? (
+                  <a
+                    href={selectedProject.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-gray-800 text-white font-semibold px-5 py-2 rounded hover:bg-gray-700 transition"
+                  >
+                    <GitHub size={18} />
+                    {t("projects.button2")}
+                  </a>
+                ) : (
+                  <button
+                    disabled
+                    className="inline-flex items-center gap-2 bg-gray-700 text-gray-400 font-semibold px-5 py-2 rounded cursor-not-allowed"
+                  >
+                    <GitHub size={18} />
+                    {t("projects.code_unavailable")}
+                  </button>
+                )}
+              </div>
 
-    {/* === GITHUB === */}
-    {selectedProject.githubVisibility &&
-    selectedProject.githubLink &&
-    selectedProject.githubLink !== "#" ? (
-      <a
-        href={selectedProject.githubLink}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 bg-gray-800 text-white font-semibold px-5 py-2 rounded hover:bg-gray-700 transition"
-      >
-        <GitHub size={18} />
-        {t("projects.button2")}
-      </a>
-    ) : (
-      <button
-        disabled
-        className="inline-flex items-center gap-2 bg-gray-700 text-gray-400 font-semibold px-5 py-2 rounded cursor-not-allowed"
-      >
-        <GitHub size={18} />
-        {t("projects.code_unavailable")}
-      </button>
-    )}
-  </div>
-
-  {/* === MENSAJE SIEMPRE VISIBLE === */}
-  <div className="text-sm text-gray-400 italic bg-gray-800/60 px-4 py-2 rounded max-w-fit">
-    {t("projects.always_visible")}
-  </div>
-</div>
-
+              {/* === MENSAJE SIEMPRE VISIBLE === */}
+              <div className="text-sm text-gray-400 italic bg-gray-800/60 px-4 py-2 rounded max-w-fit">
+                {t("projects.always_visible")}
+              </div>
+            </div>
           </div>
         </div>
       )}
@@ -433,7 +423,7 @@ export default function Projects() {
             {/* Botón cerrar */}
             <button
               onClick={() => setFullscreenImage(null)}
-              className="absolute -top-10 right-0 text-white text-3xl hover:text-primary transition"
+              className="absolute -top-10 right-0 text-red-500 text-3xl hover:text-red-400 cursor-pointer z-50 transform transition"
             >
               &times;
             </button>

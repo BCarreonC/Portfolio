@@ -15,6 +15,12 @@ export default function Education() {
     periodo: t("education.0.duration"),
     descripcion: t("education.0.description"),
   },
+  {
+    institucion: t("education.1.institution"),
+    grado: t("education.1.degree"),
+    periodo: t("education.1.duration"),
+    descripcion: t("education.1.description"),
+  },
 ];
 
 const certificaciones = [
@@ -38,6 +44,12 @@ const certificaciones = [
     periodo: t("certifications.3.date"),
     descripcion: t("certifications.3.description"),
   },
+  {
+    nombre: t("certifications.4.name"),
+    periodo: t("certifications.4.date"),
+    descripcion: t("certifications.4.description"),
+  },
+
 ];
 
   useEffect(() => {

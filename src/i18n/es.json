@@ -54,7 +54,7 @@
         "adminProyectos": "Módulo de proyectos con seguimiento de tareas, tiempos y recursos.",
         "adminCursos": "Gestión de cursos y capacitaciones para empleados y clientes.",
         "adminAgregarVacante": "Formulario para agregar nuevas vacantes al sistema.",
-        "adminArticulonew":"Interfaz para crear nuevos artículos en el módulo de blogs.",
+        "adminArticulonew": "Interfaz para crear nuevos artículos en el módulo de blogs.",
         "adminArticuloEdit": "Edición de artículos con vista previa en tiempo real.",
         "blogsArticulos": "Listado de artículos publicados con opciones de edición y eliminación.",
         "landingInicio": "Landing page principal del sistema con información general y acceso al dashboard.",
@@ -66,7 +66,6 @@
       "name": "ERP para Empresa de Seguridad Privada",
       "description": "Sistema ERP para la gestión de inventarios, proyectos y reportes automáticos. Incluyó levantamiento de requerimientos y entregas incrementales bajo metodología Scrum.",
       "type": "Desktop / ERP"
-
     },
     "2": {
       "name": "Chatbot Inteligente de Medicamentos",
@@ -83,32 +82,43 @@
     "title": "Educación",
     "0": {
       "institution": "Universidad Autónoma de Querétaro (UAQ)",
-      "degree": "Ingeniería en Software — Egresado",
+      "degree": "Ingeniería en Software | Egresado",
       "duration": "Julio 2021 – Diciembre 2025",
       "description": "Formación profesional en ingeniería de software con enfoque en desarrollo full-stack, arquitectura de sistemas, bases de datos, calidad de software y metodologías ágiles. Participación en proyectos académicos y profesionales orientados a sistemas empresariales."
+    },
+    "1": {
+      "institution": "Platzi | Escuela de Tecnología Online",
+      "degree": "Formación Complementaria en Desarrollo Full Stack",
+      "duration": "2025 – Actualidad",
+      "description": "Formación continua en tecnologías y herramientas modernas para desarrollo full stack, incluyendo React, TypeScript, NestJS, Node.js, APIs REST, autenticación JWT, Docker y arquitectura de software, con enfoque práctico basado en proyectos."
     }
   },
   "certifications": {
     "title": "Certificaciones",
     "0": {
-      "name": "AWS Cloud Foundations",
-      "date": "2024",
+      "name": "AWS Cloud Foundations - AWS",
+      "date": "Finalizado en 2024",
       "description": "Fundamentos de computación en la nube, servicios principales de AWS, arquitectura cloud, seguridad y buenas prácticas para entornos empresariales."
     },
     "1": {
-      "name": "Visualización de Datos con Python",
-      "date": "2024",
+      "name": "Visualización de Datos con Python -UAQ",
+      "date": "Finalizado en 2024",
       "description": "Análisis y visualización de datos utilizando Python para interpretación de información y apoyo a la toma de decisiones."
     },
     "2": {
-      "name": "Ingeniería de Datos con Python y PySpark",
-      "date": "En curso",
+      "name": "Ingeniería de Datos con Python y PySpark - UAQ",
+      "date": "Finalizado en 2026",
       "description": "Procesamiento de datos a gran escala, pipelines de datos y fundamentos de ingeniería de datos utilizando PySpark."
     },
     "3": {
-      "name": "Prompt Engineering",
+      "name": "Prompt Engineering - Platzi",
       "date": "En curso",
       "description": "Diseño y optimización de prompts para modelos de lenguaje, aplicado a soluciones de IA y automatización."
+    },
+    "4": {
+      "name": "Fundamentos de Docker - Platzi",
+      "date": "Finalizado en 2025",
+      "description": "Conceptos básicos de contenedores, creación y gestión de contenedores con Docker, y su aplicación en entornos de desarrollo y producción."
     }
   }
 }
