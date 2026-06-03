@@ -51,28 +51,32 @@ export default function Hero() {
 
   // Efecto de tipeo letra por letra
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      const currentFrase = frases[index];
+    const timeout = setTimeout(
+      () => {
+        const currentFrase = frases[index];
 
-      if (!deleting && subIndex < currentFrase.length) {
-        setSubIndex(subIndex + 1);
-      } else if (deleting && subIndex > 0) {
-        setSubIndex(subIndex - 1);
-      } else if (!deleting && subIndex === currentFrase.length) {
-        setTimeout(() => setDeleting(true), 2000);
-      } else if (deleting && subIndex === 0) {
-        setDeleting(false);
-        setIndex((prev) => (prev + 1) % frases.length);
-      }
-    }, deleting ? 40 : 100);
+        if (!deleting && subIndex < currentFrase.length) {
+          setSubIndex(subIndex + 1);
+        } else if (deleting && subIndex > 0) {
+          setSubIndex(subIndex - 1);
+        } else if (!deleting && subIndex === currentFrase.length) {
+          setTimeout(() => setDeleting(true), 2000);
+        } else if (deleting && subIndex === 0) {
+          setDeleting(false);
+          setIndex((prev) => (prev + 1) % frases.length);
+        }
+      },
+      deleting ? 40 : 100,
+    );
 
     return () => clearTimeout(timeout);
   }, [subIndex, deleting, index, frases]);
 
   return (
     <main
-    id="about" 
-    className="relative flex grow items-center justify-start min-h-screen px-6 md:px-12 lg:px-24 overflow-hidden bg-linear-to-br from-gray-950 via-gray-900 to-black">
+      id="about"
+      className="relative flex grow items-center justify-start min-h-screen px-6 md:px-12 lg:px-24 overflow-hidden bg-linear-to-br from-gray-950 via-gray-900 to-black"
+    >
       {/* Fondo animado */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(59,130,246,0.15),transparent_70%)] animate-pulse"></div>
@@ -101,6 +105,12 @@ export default function Hero() {
             </span>
           </h2>
 
+          <p className="sr-only">
+            Software Engineer, Full Stack Developer specialized in React,
+            TypeScript, NestJS, MongoDB, Docker and Enterprise Software
+            Development.
+          </p>
+
           <p className="mt-4 sm:mt-6 md:mt-8 max-w-2xl text-gray-300 text-sm sm:text-base lg:text-lg transition-opacity duration-700">
             {t("hero.description")}
           </p>
@@ -119,7 +129,9 @@ export default function Hero() {
       {/* Redes sociales solo en móvil con animación */}
       <div
         className={`fixed bottom-4 left-1/2 transform -translate-x-1/2 flex  md:hidden xl:hidden space-x-10 z-20 transition-all duration-700 ${
-          socialVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          socialVisible
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-6"
         }`}
       >
         {socialIcons.map((icon, i) => (

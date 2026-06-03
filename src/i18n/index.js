@@ -8,7 +8,7 @@ i18n.use(initReactI18next).init({
     en: { translation: en },
     es: { translation: es },
   },
-  lng: "es", // idioma por defecto
+  lng: navigator.language.startsWith("es") ? "es" : "en",
   fallbackLng: "en",
   interpolation: { escapeValue: false },
 });
