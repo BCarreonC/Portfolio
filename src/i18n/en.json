@@ -36,6 +36,7 @@
     "title": "Projects",
     "button1": "View project",
     "button2": "View code",
+    "view_details": "View details",
     "no_images": "No images available for this project.",
     "demo_unavailable": "Demo not available.",
     "code_unavailable": "Code not available.",

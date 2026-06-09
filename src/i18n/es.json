@@ -36,6 +36,7 @@
     "title": "Proyectos",
     "button1": "Ver proyecto",
     "button2": "Ver código",
+    "view_details": "Ver detalles",
     "no_images": "No hay imágenes disponibles para este proyecto.",
     "demo_unavailable": "Demo no disponible.",
     "code_unavailable": "Código no disponible.",
@@ -101,7 +102,7 @@
       "description": "Fundamentos de computación en la nube, servicios principales de AWS, arquitectura cloud, seguridad y buenas prácticas para entornos empresariales."
     },
     "1": {
-      "name": "Visualización de Datos con Python -UAQ",
+      "name": "Visualización de Datos con Python - UAQ",
       "date": "Finalizado en 2024",
       "description": "Análisis y visualización de datos utilizando Python para interpretación de información y apoyo a la toma de decisiones."
     },

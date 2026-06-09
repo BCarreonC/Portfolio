@@ -6,6 +6,7 @@ import "../i18n";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Thumbs } from "swiper/modules";
 import { FaGithub as GitHub } from "react-icons/fa";
+import { FiArrowRight, FiEye, FiX } from "react-icons/fi";
 
 {
   /* === Importación de estilos Swiper === */
@@ -65,6 +66,7 @@ export default function Projects() {
         "MinIO",
         "Vault",
         "Postman",
+        "JWT",
       ],
       liveVisibility: true,
       liveLink: "https://elvoratec.com/",
@@ -196,30 +198,114 @@ export default function Projects() {
             <div
               key={i}
               onClick={() => setSelectedProject(proj)}
-              className={`cursor-pointer relative bg-gray-950 bg-opacity-70 backdrop-blur-md p-5 sm:p-6 rounded-xl shadow-lg transform transition-all duration-700 hover:scale-105 hover:shadow-2xl ${
-                visible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-10"
-              }`}
+              className={`
+                group
+                flex
+                flex-col
+                h-full
+                cursor-pointer
+                relative
+                overflow-hidden
+                bg-gray-950/70
+                backdrop-blur-md
+                p-6
+                rounded-2xl
+                border
+                border-white/10
+                shadow-lg
+                transition-all
+                duration-500
+                hover:scale-[1.02]
+                hover:border-primary/40
+                hover:-translate-y-2
+                hover:shadow-[0_0_40px_rgba(0,255,170,0.15)]
+                ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
+              `}
             >
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">
+              {/* Glow Effect */}
+              <div
+                className="
+                  absolute
+                  inset-0
+                  opacity-0
+                  group-hover:opacity-100
+                  transition-opacity
+                  duration-500
+                  bg-gradient-to-r
+                  from-primary/5
+                  to-transparent
+                  pointer-events-none
+                "
+              />
+
+              {/* Tipo de proyecto */}
+              <div className="flex items-center gap-2 mb-4 relative z-10">
+                <div className="w-2 h-2 rounded-full bg-primary" />
+
+                <span className="text-xs uppercase tracking-widest text-primary font-medium">
+                  {proj.tipo}
+                </span>
+              </div>
+
+              {/* Nombre */}
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 relative z-10">
                 {proj.nombre}
               </h3>
-              <p className="text-gray-400 text-sm sm:text-base mb-2">
-                {proj.tipo}
-              </p>
-              <p className="text-gray-300 text-xs sm:text-sm md:text-base mb-4">
+
+              {/* Descripción */}
+              <p className="text-gray-400 text-sm leading-relaxed mb-5 relative z-10 line-clamp-3">
                 {proj.descripcion}
               </p>
-              <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                {proj.tecnologias.map((tech, j) => (
+
+              {/* Tecnologías */}
+              <div className="flex flex-wrap gap-2 relative z-10">
+                {proj.tecnologias.slice(0, 10).map((tech, j) => (
                   <span
                     key={j}
-                    className="bg-primary/10 text-primary text-xs sm:text-sm px-3 py-1 rounded-full border border-primary/30"
+                    className="
+                    bg-primary/10
+                    text-primary
+                    text-xs
+                    px-3
+                    py-1
+                    rounded-full
+                    border
+                    border-primary/20
+                  "
                   >
                     {tech}
                   </span>
                 ))}
+
+                {proj.tecnologias.length > 10 && (
+                  <span
+                    className="
+                text-xs
+                px-3
+                py-1
+                rounded-full
+                bg-white/5
+                text-gray-400
+              "
+                  >
+                    +{proj.tecnologias.length - 6}
+                  </span>
+                )}
+              </div>
+
+              {/* Footer */}
+              <div className="mt-auto pt-6 flex items-center text-primary font-medium relative z-10">
+                <span>{t("projects.view_details")}</span>
+
+                <FiArrowRight
+                  size={18}
+                  className="
+                  ml-1.5
+                  transition-transform
+                  duration-300
+                  group-hover:translate-x-1
+                "
+                />
               </div>
             </div>
           ))}
@@ -247,9 +333,9 @@ export default function Projects() {
               onClick={() => {
                 setSelectedProject(null);
               }}
-              className="absolute top-3 right-3 text-red-500 text-2xl font-bold hover:text-red-400 cursor-pointer"
+              className="absolute top-4 right-3 text-red-500 text-2xl font-bold hover:text-red-400 hover:bg-gray-800 rounded-full w-8 h-8 flex items-center justify-center cursor-pointer"
             >
-              &times;
+              <FiX size={24} />
             </button>
 
             <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">
@@ -423,9 +509,30 @@ export default function Projects() {
             {/* Botón cerrar */}
             <button
               onClick={() => setFullscreenImage(null)}
-              className="absolute -top-10 right-0 text-red-500 text-3xl hover:text-red-400 cursor-pointer z-50 transform transition"
+              className="
+              absolute
+              -top-14
+              -right-14
+              w-12
+              h-12
+              flex
+              items-center
+              justify-center
+              rounded-full
+              bg-black/60
+              backdrop-blur-md
+              border
+              border-white/10
+              text-white
+              hover:bg-red-500
+              hover:border-red-500
+              hover:cursor-pointer
+              transition-all
+              duration-300
+              z-50
+            "
             >
-              &times;
+              <FiX size={24} />
             </button>
 
             {/* Imagen */}

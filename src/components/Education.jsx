@@ -117,7 +117,6 @@ const certificaciones = [
       <div
         className={`relative z-10 max-w-5xl w-full text-center md:text-left mt-12 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
-        style={{ transitionDelay: "200ms" }}
       >
         <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-8">
           {t("certifications.title")}
@@ -129,12 +128,10 @@ const certificaciones = [
         <div
           key={i}
           className={`relative z-10 bg-gray-950 bg-opacity-60 backdrop-blur-md p-5 rounded-xl shadow-md mb-6 w-full max-w-5xl
-  transition-all duration-700 transform
-  hover:-translate-y-1 hover:shadow-primary/30
-  ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}
-`}
-
-          style={{ transitionDelay: `${300 + i * 120}ms` }}
+          transition-all duration-700 transform
+          hover:-translate-y-1 hover:shadow-primary/30
+          ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}
+        `}
         >
           <div className="flex justify-between items-center mb-1">
             <h3 className="text-lg sm:text-xl font-semibold text-white">
